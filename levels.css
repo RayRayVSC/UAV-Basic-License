@@ -1,0 +1,101 @@
+/* 操作證分級元件（slide-levels.html、slide-levels-2.html、slide-levels-3.html 共用）：
+   第 1 頁級別表（.levels）與 G1–G3 表（.groups）、第 2 頁八款限制對照表（.clauses）、第 3 頁前提條件卡片（.cards）。
+   放在內容框 .slide-content 內，載入順序在 slide.css 之後。格線用儲存格邊框，列高為 4 的倍數。
+   層次：.slide-content > .levels-frame（元件外框）> .lv.levels / .lv.groups（grid） */
+
+.levels-frame{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;flex:0 0 auto}
+.lv{display:grid;gap:0;min-width:0;background:var(--ink);border:solid rgba(201,184,167,.22);border-width:2px 1px 1px 2px}
+/* 級別表：4 欄；表頭 44 + 40，資料列 5 × 40 = 284 */
+.lv.levels{grid-template-columns:200px minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);grid-template-rows:44px 40px repeat(5,40px)}
+/* 排除表：4 欄；表頭 44，資料列 56 */
+.lv.groups{grid-template-columns:200px repeat(3,minmax(0,1fr));grid-template-rows:44px 56px}
+.lv-row{display:contents}
+.lv .span-2{grid-column:span 2}.lv .row-span-2{grid-row:span 2}
+
+.lv-cell{min-height:0;padding:4px 14px;display:flex;align-items:center;gap:10px;background:var(--ink-2);color:var(--cream);font-size:.92rem;font-weight:700;line-height:1.25;position:relative;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:filter .25s ease,box-shadow .25s ease}
+.lv-cell small{font-size:.7rem;font-weight:400;opacity:.72;line-height:1.2}
+.lv-cell.center{justify-content:center;text-align:center;flex-direction:column;gap:2px}
+.lv .data-top{border-top:2px solid var(--ink)}
+
+/* 表頭 */
+.lv-head{background:var(--ink-4)}
+.lv-head.corner{background:#151210;color:var(--muted);font-size:.8rem;justify-content:space-between}
+.lv-head.corner b{color:var(--cream);font-size:.92rem}
+.lv.groups .lv-head.corner{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;line-height:1.2}
+.lv-head.zone-personal{background:#b6d7a8;color:#274e13}
+.lv-head.zone-org{background:#f4cccc;color:#7a1f1f;font-size:1.05rem;letter-spacing:.04em}
+.lv-head.basic-head{background:#b5472a;color:#fff1ea;font-size:1.05rem}
+.lv-head.adv-head{background:#7a1f1f;color:#ffe3d6;font-size:1.05rem}
+.lv-head.g-head{background:var(--orange);color:#2b0f00}
+.lv-head.g-head b{font-family:var(--font-num);font-size:1.5rem;letter-spacing:.02em;line-height:1}
+.lv-head.g-head small{opacity:.85;font-size:.78rem;font-weight:700}
+
+/* 重量欄 */
+.lv-cell.weight{background:#151210;padding:0 14px}
+.lv-cell.weight b{font-family:var(--font-num);font-size:1.05rem;letter-spacing:.01em;display:flex;justify-content:space-between;width:100%;gap:6px}
+.lv-cell.weight b span:nth-child(2){color:var(--muted);font-weight:400}
+
+/* 資料格色塊 */
+.lv-cell.free{background:var(--sheet-blue);color:#17294d}
+.lv-cell.normal{background:var(--sheet-green);color:#1d3311}
+.lv-cell.basic{background:var(--sheet-orange);color:#3a1b00}
+.lv-cell.adv{background:var(--orange);color:#2b0f00}
+.lv-cell .code{font-family:var(--font-num);font-size:1.45rem;letter-spacing:.02em;line-height:1;min-width:2.2em}
+.lv-cell .lbl{font-size:.8rem;font-weight:700;opacity:.9}
+.lv-cell .lbl small{display:block;opacity:.75;font-size:.66rem}
+
+/* 排除表資料格 */
+.lv-cell.items{flex-wrap:wrap;gap:4px 8px;align-content:center;font-size:.9rem}
+.lv-cell.items span{padding:2px 9px;border:1px solid rgba(255,107,44,.55);border-radius:999px;color:var(--cream);background:rgba(255,107,44,.1);font-size:.82rem;white-space:nowrap}
+.lv-cell.rowlabel{background:#151210;color:var(--muted);font-size:.85rem}
+
+/* 附註（覆寫內容框內文 18pt 規格）：置中並左右內縮 130px，避開頁尾左右兩側翻頁按鈕（按鈕高 72px，會伸進內容框底部） */
+.slide-content>p.levels-note{margin:0;padding:0 130px;color:var(--faint);font-size:.74rem;line-height:1.4;text-align:center}
+.slide-content>p.levels-note span{color:var(--orange)}
+
+/* 同色連動（頁內小腳本切換 is-active、has-active） */
+.lv-cell[data-group]{cursor:pointer}
+.lv-cell.is-active{z-index:2;filter:brightness(1.12) saturate(1.12);box-shadow:inset 0 0 0 2px rgba(11,10,9,.4),0 0 8px rgba(255,255,255,.12)}
+.lv.has-active .lv-cell[data-group]:not(.is-active){filter:brightness(.72) saturate(.7)}
+
+/* ===== 第 2 頁：八款限制對照表（.lv.clauses） =====
+   4 欄：款 / 限制內容 / 基本級 / 需高級組別；表頭 40，資料列 8 × 40 = 320 */
+.lv.clauses{grid-template-columns:72px minmax(0,1fr) 168px 168px;grid-template-rows:40px repeat(8,40px)}
+.lv.clauses .lv-head{justify-content:center;text-align:center;background:var(--ink-4)}
+.lv.clauses .lv-head.basic-head{background:#b5472a;color:#fff1ea;font-size:.95rem}
+.lv.clauses .lv-head.adv-head{background:#7a1f1f;color:#ffe3d6;font-size:.95rem}
+.lv-cell.no{justify-content:center;background:#151210;font-family:var(--font-num);font-size:1.25rem;color:var(--cream)}
+.lv-cell.no.hit{background:var(--sheet-orange);color:#3a1b00}
+.lv-cell.text{font-size:.95rem;font-weight:700}
+.lv-cell.text small{margin-left:6px}
+.lv-cell.ok{justify-content:center;gap:6px;background:var(--sheet-orange);color:#3a1b00}
+.lv-cell.ok b{font-family:var(--font-num);font-size:1.3rem;line-height:1}
+.lv-cell.nope{justify-content:center;background:var(--ink-2);color:var(--faint);font-weight:400}
+.lv-cell.gcell{justify-content:center;gap:8px;background:var(--orange);color:#2b0f00}
+.lv-cell.gcell b{font-family:var(--font-num);font-size:1.3rem;line-height:1}
+.lv-cell.gcell small{opacity:.85;font-weight:700}
+.lv-cell.dash{justify-content:center;background:var(--ink-2);color:var(--faint);font-weight:400}
+
+/* ===== 第 3 頁：前提條件卡片（.cards） =====
+   兩欄卡片 + 底部橫幅；字級 .9rem，行距 1.45 */
+.cards{display:grid;grid-template-columns:1fr 1.25fr;gap:12px;min-width:0;flex:0 0 auto}
+.card{position:relative;padding:12px 16px 12px;background:var(--ink-2);border:solid rgba(201,184,167,.22);border-width:2px 1px 1px 2px;min-width:0}
+.card.full{grid-column:1 / -1;display:grid;grid-template-columns:auto 1fr;gap:4px 20px;align-items:start}
+.card h2{margin:0 0 6px;font:700 1rem var(--font-zh);color:var(--cream);letter-spacing:.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap;white-space:nowrap}
+.card h2 small{flex-basis:100%;white-space:normal}
+.card h2 .tag{white-space:nowrap;flex:none;font-family:var(--font-num);font-size:.78rem;padding:2px 8px;border-radius:999px;background:var(--orange);color:#2b0f00;letter-spacing:.04em}
+.card h2 .tag.basic{background:var(--sheet-orange);color:#3a1b00}
+.card.full h2{grid-row:1 / span 2;margin:0;align-self:center;padding-right:18px;border-right:1px solid rgba(201,184,167,.22)}
+.card ul,.card ol{margin:0;padding-left:1.3em;color:var(--cream);font-size:.9rem;line-height:1.45}
+.card ul{list-style:"◦ "}
+.card li{margin:0 0 2px}
+.card li small{display:block;color:var(--muted);font-size:.8rem;line-height:1.4}
+.card b.law{font-family:var(--font-num);color:var(--orange);font-weight:700}
+/* 卡片內迷你表格（EVLOS 角色資格）：列高 20px，兩欄 */
+.card table.mini{margin:4px 0 0;border-collapse:collapse;width:100%;font-size:.78rem;line-height:1.2;color:var(--cream)}
+.card table.mini th,.card table.mini td{padding:1px 8px;text-align:left;border-bottom:1px solid rgba(201,184,167,.16);vertical-align:middle;white-space:nowrap}
+.card table.mini th{width:7.5em;font-weight:700;color:var(--muted);background:#151210}
+.card table.mini td b{color:var(--orange)}
+.slide-content>p.levels-tip,.slide-content>p.tip{position:absolute;left:0;right:0;bottom:0;height:38px;margin:0;padding:0 130px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:.74rem;line-height:1.4;text-align:center}
+.slide-content>p.levels-tip b,.slide-content>p.tip b{color:var(--orange);font-weight:700}
+.slide-content>p.tip b.law{font-family:var(--font-num);letter-spacing:.02em}

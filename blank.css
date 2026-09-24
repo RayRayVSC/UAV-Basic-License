@@ -1,0 +1,6 @@
+/* 空白投影片：內容框參考線（排版用）。定稿後刪掉內容檔裡的 .layout-guide 即可，不影響其他頁。 */
+.layout-guide{position:absolute;inset:0;border:1px dashed rgba(255,107,44,.5);pointer-events:none}
+.layout-guide::before{content:"內容框 1056 × 459（y 221–680）";position:absolute;left:8px;top:6px;color:rgba(255,107,44,.7);font:.72rem var(--font-num);letter-spacing:.06em}
+.layout-guide::after{content:"y 642 以下左右各 112 px 為翻頁按鈕區";position:absolute;left:50%;transform:translateX(-50%);bottom:6px;white-space:nowrap;color:rgba(255,107,44,.5);font:.72rem var(--font-num);letter-spacing:.06em}
+.layout-guide i{position:absolute;bottom:0;width:112px;height:38px;border-top:1px dashed rgba(255,107,44,.35)}
+.layout-guide i:first-child{left:0}.layout-guide i:last-child{right:0}

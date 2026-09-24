@@ -1,0 +1,142 @@
+<!-- 產生器範本：由 build.py 讀取，{{...}} 由 pages/*.md 填入。頁首帶、頁尾署名、翻頁按鈕與動畫、雷達背景都固定在這裡，不在內容檔裡。 -->
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="遙控無人機管理規則第 28 條的四項操作限制，以及排除操作限制的前提條件：法人能力審查、活動許可、責任保險。投影片版 1280×720。">
+  <title>操作證分級｜投影片版（固定 1280×720）</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="levels.css">
+</head>
+<body class="slide-fixed">
+  <canvas id="radar" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="stage" id="stage">
+    <div class="slide-top" role="banner"><span class="eyebrow"><b>無人機</b> ／ 專業基本級操作證</span></div>
+    <header class="slide-head">
+      <h1 class="title-line">
+        <span class="title-main">操作證分級</span>
+        <span class="title-sep" aria-hidden="true">－</span>
+        <span class="title-sub">1.4 排除限制的前提條件</span>
+      </h1>
+      <p class="title-lead">第 4 款＝管理規則第 28 條的四項限制　；　排除限制須由法人申請，並有能力審查、活動許可與保險三個前提。</p>
+    </header>
+
+    <section class="slide-content">
+    <div class="cards">
+      <section class="card" aria-labelledby="c1">
+        <h2 id="c1"><span class="tag basic">第 4 款</span>管理規則第 28 條的四項操作限制</h2>
+        <ul>
+          <li>應遠離高速公路、快速公（道）路、鐵路、高架鐵路、大眾捷運系統、建築物及障礙物 30 公尺以上</li>
+          <li>不得於移動中之航空器、車輛或船艦上操作</li>
+          <li>未達 25 公斤且裝置導航設備者，最大飛行速度每小時不得超過 160 公里（87 海里）</li>
+          <li>延伸視距飛航最大範圍為以操作人為中心半徑 900 公尺、高度低於 400 呎，且需目視觀察員<small><b class="law">延伸視距≠視距外，基本級即可</b>：延伸視距是第 4 款允許的操作方式，視距外是第 7 款才需 G1；由法人申請活動並指派目視觀察員（民航局問答第二十題）</small></li>
+        </ul>
+        <table class="mini" aria-label="延伸視距飛航各角色所需資格">
+          <tr><th scope="row">操作人</th><td><b>專業基本級 I2／I 以上</b>（對應機體重量級距）</td></tr>
+          <tr><th scope="row">目視觀察員</th><td><b>普通操作證或專業操作證</b>，不得與操作人同一人</td></tr>
+          <tr><th scope="row">只持普通操作證</th><td>可當觀察員，<b>不能當 EVLOS 操作人</b></td></tr>
+        </table>
+      </section>
+      <section class="card" aria-labelledby="c2">
+        <h2 id="c2"><span class="tag">前提</span>排除限制的前提條件<small style="font-weight:400;color:var(--muted);font-size:.78rem">不是拿到證就能排除，只有政府機關（構）、學校或法人可申請（民航法 §99-14 第 2 項）</small></h2>
+        <ol>
+          <li>自然人須加入通過民航局能力審查的法人<small>法人提交作業手冊，敘明排除事項之設備及程序；核准效期 2 年，屆期前 30 日內可申請延展（管理規則 <b class="law">§30</b>）</small></li>
+          <li>活動日 15 日前檢附活動計畫書申請活動許可（管理規則 <b class="law">§32</b>）<small>許可期限原則 3 個月；農政機關登記合格之法人從事第 2、3、6 款活動 6 個月；政府機關執行業務 1 年</small></li>
+          <li>活動前須投保責任保險（民航法 <b class="law">§99-15</b> 第 3 項）</li>
+        </ol>
+      </section>
+      <section class="card full" aria-labelledby="c3">
+        <h2 id="c3"><span class="tag basic">基本級</span>本身的操作權限（非限制排除）</h2>
+        <ul>
+          <li>可操作政府機關（構）、學校或法人所有的無人機，以及自然人所有 15 公斤以上的無人機</li>
+          <li>具教學資格：依持證重量級距，教同一構造／級別以下的遙控無人機</li>
+        </ul>
+      </section>
+    </div>
+    <p class="tip">給證須知 113.12.01 版 壹、一、(四)：基本級得執行民航法 <b class="law">§99-14</b> 第 1 項第 3、4、8 款之排除項目；高級得執行第 1 至 8 款。</p>
+    </section>
+
+    <footer class="slide-foot">
+      <a class="nav-btn nav-prev" href="ch1p15_1.4_Basic_Level_Exclusions.html" data-nav="prev" aria-label="上一頁" title="上一頁">
+        <span class="nav-text">上一頁</span>
+        <svg class="nav-icon icon-rc" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+          <!-- 天線 -->
+          <path d="M14 16 L8 3" /><path d="M50 16 L56 3" />
+          <circle cx="8" cy="3" r="1.6" class="fill" /><circle cx="56" cy="3" r="1.6" class="fill" />
+          <!-- 機身 -->
+          <rect x="6" y="14" width="52" height="26" rx="7" />
+          <!-- 螢幕 -->
+          <rect x="26" y="19" width="12" height="7" rx="1.5" class="screen" />
+          <!-- 左右搖桿 -->
+          <circle cx="17" cy="28" r="6" /><circle cx="17" cy="28" r="1.8" class="fill stick stick-l" />
+          <circle cx="47" cy="28" r="6" /><circle cx="47" cy="28" r="1.8" class="fill stick stick-r" />
+          <!-- 天線訊號（僅左側；以左天線尖端 8,3 為圓心的兩道波紋，內圈先亮） -->
+          <g class="signal"><path class="wave wave-1" d="M3.17 4.29 A5 5 0 0 1 7.56 -1.98" /><path class="wave wave-2" d="M-0.21 5.2 A8.5 8.5 0 0 1 7.26 -5.47" /></g>
+          <!-- 開關 -->
+          <path d="M28 33 h8" /><path d="M30 36 h4" />
+        </svg>
+      </a>
+      <p>台中市政府輔導　台中無人機創造發展基地－無人機教材 專業基本級操作證</p>
+      <a class="nav-btn nav-next" href="ch1_Quiz_1.4.html" data-nav="next" aria-label="下一頁" title="下一頁">
+        <span class="nav-text">下一頁</span>
+        <svg class="nav-icon icon-fpv" viewBox="-12 5 112 52" aria-hidden="true" focusable="false">
+          <!-- viewBox 從 x=-12、y=5 起算：左側加寬 12 單位放尾流線；圖形整體上移 5 單位，貼近「下一頁」文字（與遙控器對齊） -->
+          <!-- 尾流線（與飛行方向平行，微微向右上） -->
+          <g class="trail"><path d="M-4 25 l16 -0.8" /><path d="M-11 31 l24 -1.3" /><path d="M-5 37 l18 -0.9" /></g>
+          <g class="quad">
+            <!-- 靜態抬頭角；CSS 動畫套在外層 .quad，不會覆蓋這個 transform -->
+            <g transform="rotate(-8 56 30)">
+              <!-- 後方（遠側）機臂、馬達、螺旋槳：較細較小 -->
+              <path class="arm arm-far" d="M46.2 24.6 L29.3 13.1" /><path class="arm arm-far" d="M61.8 25.8 L68.7 15.5" />
+              <path class="motor" d="M29.3 13.1 v-3" /><path class="motor" d="M68.7 15.5 v-3" />
+              <ellipse class="prop prop-far" cx="29.3" cy="10.1" rx="10.2" ry="4.8" /><ellipse class="prop prop-far" cx="68.7" cy="12.5" rx="10.8" ry="5" />
+              <!-- 機身：側板（厚度）＋上蓋 -->
+              <path class="side" d="M45.9 29.2 L50.3 34.2 L65.8 35.4 L67.7 31 v2.6 L65.8 38 L50.3 36.8 L45.9 31.8 Z" />
+              <path class="plate" d="M67.7 31 L65.8 35.4 L50.3 34.2 L45.9 29.2 L46.2 24.6 L61.8 25.8 Z" />
+              <!-- 天線（機尾，向後上方） -->
+              <path d="M48.4 27.2 L44 13.5" /><circle cx="44" cy="13.5" r="1.2" class="fill" />
+              <!-- 前方（近側）機臂、馬達 -->
+              <path class="arm arm-near" d="M50.3 34.2 L43.3 44.5" /><path class="arm arm-near" d="M65.8 35.4 L81.3 46.9" />
+              <path class="motor" d="M43.3 44.5 v-3" /><path class="motor" d="M81.3 46.9 v-3" />
+              <!-- 前方（近側）螺旋槳：較大 -->
+              <ellipse class="prop" cx="43.3" cy="41.5" rx="11.4" ry="5.4" /><ellipse class="prop" cx="81.3" cy="43.9" rx="12" ry="5.8" />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+  (function(){
+    // 同色連動：滑鼠、鍵盤聚焦、觸控碰到有 data-group 的格子時，兩張表內同組格子一起亮起（本頁不用 .matrix，app.js 的連動不作用）
+    var tables=document.querySelectorAll('.lv'),cells=document.querySelectorAll('.lv-cell[data-group]'),current=null,lastTouch=0;
+    function set(g){if(g===current)return;current=g;tables.forEach(function(t){t.classList.toggle('has-active',!!g)});cells.forEach(function(c){c.classList.toggle('is-active',!!g&&c.dataset.group===g)})}
+    function from(t){var el=t&&t.closest?t.closest('[data-group]'):null;return el?el.dataset.group:null}
+    tables.forEach(function(t){
+      t.addEventListener('mouseover',function(e){if(Date.now()-lastTouch<800)return;set(from(e.target))});
+      t.addEventListener('mouseleave',function(){set(null)});
+      t.addEventListener('focusin',function(e){set(from(e.target))});
+      t.addEventListener('focusout',function(e){if(!t.contains(e.relatedTarget))set(null)});
+      t.addEventListener('touchstart',function(e){lastTouch=Date.now();var g=from(e.target);set(g===current?null:g)},{passive:true});
+    });
+  })();
+  </script>
+  <script>
+  (function(){
+    // 上一頁／下一頁：href 由 build.py 依頁序填入；href 為 # 時不動作。鍵盤 ← → 與 PageUp／PageDown 同步觸發，輸入框、對話框內不觸發。
+    var prev=document.querySelector('[data-nav="prev"]'),next=document.querySelector('[data-nav="next"]');
+    function go(a){var h=a&&a.getAttribute('href');if(h&&h!=='#')location.href=h}
+    [prev,next].forEach(function(a){a.addEventListener('click',function(e){if(a.getAttribute('href')==='#')e.preventDefault()})});
+    document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;if(e.target&&e.target.closest&&e.target.closest('input,textarea,select,video,audio,[contenteditable]'))return;if(document.querySelector('dialog[open]'))return;if(e.key==='ArrowRight'||e.key==='PageDown')go(next);if(e.key==='ArrowLeft'||e.key==='PageUp')go(prev)});
+  })();
+  </script>
+</body>
+</html>

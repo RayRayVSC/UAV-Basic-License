@@ -1,0 +1,35 @@
+:root {
+  --ink:#0b0a09; --ink-2:#12100f; --ink-3:#1a1715; --ink-4:#24201d;
+  --cream:#f3eee6; --muted:#a39a8e; --faint:#6f675f; --orange:#ff6b2c;
+  --sheet-orange:#ff9900; --sheet-green:#93c47d; --sheet-blue:#a4c2f4; --sheet-cyan:#00dcfe; --sheet-pink:#ffa3a8;
+  --line-soft:rgba(201,184,167,.14);
+  --shell:1280px; --radius:16px;
+  --font-zh:"Microsoft JhengHei","Noto Sans TC","PingFang TC",system-ui,sans-serif;
+  --font-num:Bahnschrift,"Segoe UI Variable Display","Arial Narrow",sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{min-height:100vh;margin:0;color:var(--cream);background:var(--ink);font-family:var(--font-zh);line-height:1.75;letter-spacing:.02em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.shell{width:min(calc(100% - 36px),var(--shell));margin-inline:auto;position:relative;z-index:2}
+#radar{position:fixed;inset:0;z-index:0;opacity:.45;pointer-events:none}
+.grain{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(90% 70% at 50% -5%,rgba(255,107,44,.13),transparent 55%),radial-gradient(70% 50% at 90% 70%,rgba(255,107,44,.04),transparent 70%)}
+.scanlines{position:fixed;inset:0;z-index:1;opacity:.035;pointer-events:none;background:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 4px)}
+.matrix-section{min-height:100vh;padding:clamp(70px,11vh,120px) 0;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;position:relative}
+.matrix-scroll{min-width:0}
+.section-head{max-width:52em;margin-bottom:clamp(34px,5vh,52px);animation:rise .7s both ease-out}
+.section-head>span{display:block;margin-bottom:12px;color:var(--faint);font:.65rem var(--font-num);letter-spacing:.3em}
+.section-head>span::before{content:"";display:inline-block;width:34px;height:1px;margin:0 11px 3px 0;background:var(--orange)}
+.section-head>span b{color:var(--orange)}
+h1{margin:0 0 14px;font-size:clamp(2rem,5vw,3.65rem);line-height:1.25;letter-spacing:-.035em}
+.section-head p{margin:0;color:var(--muted);font-size:clamp(.9rem,1.5vw,1rem)}
+.matrix-wrap{padding:clamp(22px,3.2vw,34px);border:1px solid var(--line-soft);border-radius:var(--radius);background:linear-gradient(150deg,rgba(20,18,16,.96),rgba(11,10,9,.96));box-shadow:0 35px 90px rgba(0,0,0,.28);position:relative;overflow:hidden;animation:rise .7s .1s both ease-out}
+.matrix-wrap::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,var(--orange),transparent 65%)}
+.matrix-scroll{overflow-x:auto;padding:22px;margin:-22px;scrollbar-width:thin;scrollbar-color:var(--orange) var(--ink-3)}
+.matrix-scroll::-webkit-scrollbar{height:5px}.matrix-scroll::-webkit-scrollbar-track{background:var(--ink-3)}.matrix-scroll::-webkit-scrollbar-thumb{background:var(--orange);border-radius:9px}
+/* 矩陣表格（.matrix、.m-cell 等）已獨立至 matrix.css */
+.matrix-footnote{display:flex;gap:10px;margin:20px 0 0;color:var(--faint);font-size:.74rem}.matrix-footnote span{color:var(--orange)}
+.swipe-hint{display:none;margin:12px 0 0;color:var(--faint);text-align:center;font:.62rem var(--font-num);letter-spacing:.08em}
+@keyframes rise{from{transform:translateY(18px)}}
+@media(max-width:720px){.matrix-section{padding:52px 0;align-items:start}.matrix-wrap{padding:14px}.matrix-legend{gap:8px 16px}.swipe-hint{display:block}.matrix-footnote{line-height:1.6}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}#radar{display:none}}

@@ -1,0 +1,15 @@
+  <script>
+  (function(){
+    // 同色連動：滑鼠、鍵盤聚焦、觸控碰到有 data-group 的格子時，兩張表內同組格子一起亮起（本頁不用 .matrix，app.js 的連動不作用）
+    var tables=document.querySelectorAll('.lv'),cells=document.querySelectorAll('.lv-cell[data-group]'),current=null,lastTouch=0;
+    function set(g){if(g===current)return;current=g;tables.forEach(function(t){t.classList.toggle('has-active',!!g)});cells.forEach(function(c){c.classList.toggle('is-active',!!g&&c.dataset.group===g)})}
+    function from(t){var el=t&&t.closest?t.closest('[data-group]'):null;return el?el.dataset.group:null}
+    tables.forEach(function(t){
+      t.addEventListener('mouseover',function(e){if(Date.now()-lastTouch<800)return;set(from(e.target))});
+      t.addEventListener('mouseleave',function(){set(null)});
+      t.addEventListener('focusin',function(e){set(from(e.target))});
+      t.addEventListener('focusout',function(e){if(!t.contains(e.relatedTarget))set(null)});
+      t.addEventListener('touchstart',function(e){lastTouch=Date.now();var g=from(e.target);set(g===current?null:g)},{passive:true});
+    });
+  })();
+  </script>

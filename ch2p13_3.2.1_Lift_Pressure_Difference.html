@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="觀察空氣流過機翼、上下表面的壓力差與升力。可調整迎角、暫停及逐步觀察的互動教學動畫。">
+  <title>機翼升力－看見壓力差｜無人機教學</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ch2_3.2.1_lift.css">
+  <script src="ch2_3.2.1_lift-flow.js" defer></script>
+  <script src="ch2_3.2.1_lift.js" defer></script>
+</head>
+<body class="lift-page">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <a class="skip-link" href="#experiment">跳至教學動畫</a>
+
+  <main class="lift-stage" id="stage">
+    <div class="slide-top">
+      <span class="eyebrow"><b>無人機</b> ／ 專業基本級操作證</span>
+      <div class="top-actions">
+        <span class="chapter">飛行原理 <span aria-hidden="true">/</span> 01</span>
+        <button id="fullscreen" class="icon-button" type="button" aria-label="全螢幕顯示" title="全螢幕顯示">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <header class="slide-head">
+      <h1 class="title-line"><span class="title-main">機翼升力</span><span class="title-sep" aria-hidden="true">－</span><span class="title-sub">3.2.1 看見壓力差</span></h1>
+      <p class="title-lead">空氣流過機翼，上、下表面形成不同的壓力分布，產生升力。</p>
+    </header>
+
+    <section class="lesson-content" id="experiment" aria-label="機翼升力互動實驗" tabindex="-1">
+      <div class="lesson-steps" role="group" aria-label="教學步驟">
+        <button type="button" class="step" data-step="0" aria-pressed="false"><span class="step-number">01</span><span>觀察氣流</span></button>
+        <button type="button" class="step" data-step="1" aria-pressed="false"><span class="step-number">02</span><span>看見壓力差</span></button>
+        <button type="button" class="step active" data-step="2" aria-pressed="true"><span class="step-number">03</span><span>合成升力</span></button>
+        <button type="button" class="step" data-step="3" aria-pressed="false"><span class="step-number">04</span><span>改變迎角</span></button>
+      </div>
+
+      <div class="lab-layout">
+        <figure class="flow-panel" aria-labelledby="flow-title" aria-describedby="flow-description">
+          <figcaption class="panel-heading"><span id="flow-title">機翼剖面 <span class="heading-divider">/</span> <span class="heading-en" lang="en">AIRFLOW LAB</span></span><span class="live-status" id="flow-status"><i aria-hidden="true"></i><span>流動中</span></span></figcaption>
+          <div class="flow-viewport">
+            <canvas id="airflow" width="1000" height="335" role="img" aria-label="氣流由左向右繞過機翼，上方壓力較低、下方相對較高，合成向上的升力。">此瀏覽器無法顯示動畫。氣流由左向右流過機翼，機翼上下表面的壓力作用合成向上的升力。</canvas>
+          </div>
+          <div class="flow-legend" id="pressure-legend"><span>壓力</span><span class="legend-low">較低</span><span class="legend-gradient" aria-hidden="true"></span><span class="legend-high">較高</span><span class="legend-note">粒子移動快慢表示流速</span></div>
+          <p class="sr-only" id="flow-description">彎曲翼型的附著流教學示意。壓力以藍色至橙色顯示，小箭頭指向機翼表面，綠色大箭頭表示升力。迎角可在零至十二度之間調整。粒子各自依局部速度前進。</p>
+        </figure>
+
+        <aside class="control-panel" aria-label="動畫控制">
+          <div class="control-heading"><h2>調整迎角</h2><span lang="en">ANGLE OF ATTACK</span></div>
+          <div class="angle-readout"><label for="angle">迎角 <span lang="el">α</span></label><output id="angle-value" for="angle">6<span>°</span></output></div>
+          <input id="angle" type="range" min="0" max="12" step="1" value="6" aria-describedby="angle-help" aria-valuetext="6 度">
+          <div class="range-scale" aria-hidden="true"><span>0°</span><span>6°</span><span>12°</span></div>
+          <div class="angle-presets" role="group" aria-label="迎角快捷設定">
+            <button type="button" data-angle="0" aria-pressed="false">0° <span>較小</span></button>
+            <button type="button" data-angle="6" class="selected" aria-pressed="true">6° <span>適中</span></button>
+            <button type="button" data-angle="12" aria-pressed="false">12° <span>較大</span></button>
+          </div>
+          <p id="angle-help">迎角＝機翼弦線與來流方向的夾角</p>
+          <div class="lift-reading"><span>升力趨勢</span><span class="lift-meter" aria-hidden="true"><i id="lift-fill"></i></span><strong id="lift-level">中等</strong></div>
+          <div class="playback-controls">
+            <button type="button" id="play-pause" class="primary-button"><svg viewBox="0 0 20 20" aria-hidden="true" id="play-icon"><path d="M6 4v12M14 4v12"/></svg><span id="play-label">暫停</span></button>
+            <button type="button" id="replay" class="secondary-button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 7a6 6 0 1 1 0 6M4 3v4h4"/></svg>重播教學</button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="teaching-caption" aria-live="polite" aria-atomic="true">
+        <span class="caption-index" id="caption-index">03</span>
+        <div><p id="caption-title">上下表面的壓力作用，合成向上的升力。</p><p id="caption-detail">機翼同時讓氣流向下偏轉；這是同一個升力現象的兩種觀察方式。</p></div>
+        <div class="step-nav" role="group" aria-label="切換教學步驟">
+          <button type="button" id="prev-step" aria-label="上一個教學步驟"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4 6 10l6 6"/></svg>上一步</button>
+          <button type="button" id="next-step" aria-label="下一個教學步驟"><span id="next-label">下一步</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="lesson-foot">
+      <a class="nav-btn nav-prev" href="ch2_Quiz_3.1.html" data-nav="prev" aria-label="上一頁" title="上一頁">
+        <span class="nav-text">上一頁</span>
+        <svg class="nav-icon icon-rc" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+          <!-- 天線 -->
+          <path d="M14 16 L8 3" /><path d="M50 16 L56 3" />
+          <circle cx="8" cy="3" r="1.6" class="fill" /><circle cx="56" cy="3" r="1.6" class="fill" />
+          <!-- 機身 -->
+          <rect x="6" y="14" width="52" height="26" rx="7" />
+          <!-- 螢幕 -->
+          <rect x="26" y="19" width="12" height="7" rx="1.5" class="screen" />
+          <!-- 左右搖桿 -->
+          <circle cx="17" cy="28" r="6" /><circle cx="17" cy="28" r="1.8" class="fill stick stick-l" />
+          <circle cx="47" cy="28" r="6" /><circle cx="47" cy="28" r="1.8" class="fill stick stick-r" />
+          <!-- 天線訊號（僅左側；以左天線尖端 8,3 為圓心的兩道波紋，內圈先亮） -->
+          <g class="signal"><path class="wave wave-1" d="M3.17 4.29 A5 5 0 0 1 7.56 -1.98" /><path class="wave wave-2" d="M-0.21 5.2 A8.5 8.5 0 0 1 7.26 -5.47" /></g>
+          <!-- 開關 -->
+          <path d="M28 33 h8" /><path d="M30 36 h4" />
+        </svg>
+      </a>
+      <div class="footer-copy"><p>台中市政府輔導　台中無人機創造發展基地－無人機教材 專業基本級操作證</p><button type="button" id="show-notes" class="notes-button" aria-haspopup="dialog">教學模型與資料來源</button></div>
+      <a class="nav-btn nav-next" href="ch2p14_3.2_Four_Forces.html" data-nav="next" aria-label="下一頁" title="下一頁">
+        <span class="nav-text">下一頁</span>
+        <svg class="nav-icon icon-fpv" viewBox="-12 5 112 52" aria-hidden="true" focusable="false">
+          <!-- viewBox 從 x=-12、y=5 起算：左側加寬 12 單位放尾流線；圖形整體上移 5 單位，貼近「下一頁」文字（與遙控器對齊） -->
+          <!-- 尾流線（與飛行方向平行，微微向右上） -->
+          <g class="trail"><path d="M-4 25 l16 -0.8" /><path d="M-11 31 l24 -1.3" /><path d="M-5 37 l18 -0.9" /></g>
+          <g class="quad">
+            <!-- 靜態抬頭角；CSS 動畫套在外層 .quad，不會覆蓋這個 transform -->
+            <g transform="rotate(-8 56 30)">
+              <!-- 後方（遠側）機臂、馬達、螺旋槳：較細較小 -->
+              <path class="arm arm-far" d="M46.2 24.6 L29.3 13.1" /><path class="arm arm-far" d="M61.8 25.8 L68.7 15.5" />
+              <path class="motor" d="M29.3 13.1 v-3" /><path class="motor" d="M68.7 15.5 v-3" />
+              <ellipse class="prop prop-far" cx="29.3" cy="10.1" rx="10.2" ry="4.8" /><ellipse class="prop prop-far" cx="68.7" cy="12.5" rx="10.8" ry="5" />
+              <!-- 機身：側板（厚度）＋上蓋 -->
+              <path class="side" d="M45.9 29.2 L50.3 34.2 L65.8 35.4 L67.7 31 v2.6 L65.8 38 L50.3 36.8 L45.9 31.8 Z" />
+              <path class="plate" d="M67.7 31 L65.8 35.4 L50.3 34.2 L45.9 29.2 L46.2 24.6 L61.8 25.8 Z" />
+              <!-- 天線（機尾，向後上方） -->
+              <path d="M48.4 27.2 L44 13.5" /><circle cx="44" cy="13.5" r="1.2" class="fill" />
+              <!-- 前方（近側）機臂、馬達 -->
+              <path class="arm arm-near" d="M50.3 34.2 L43.3 44.5" /><path class="arm arm-near" d="M65.8 35.4 L81.3 46.9" />
+              <path class="motor" d="M43.3 44.5 v-3" /><path class="motor" d="M81.3 46.9 v-3" />
+              <!-- 前方（近側）螺旋槳：較大 -->
+              <ellipse class="prop" cx="43.3" cy="41.5" rx="11.4" ry="5.4" /><ellipse class="prop" cx="81.3" cy="43.9" rx="12" ry="5.8" />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </footer>
+  </main>
+
+  <dialog id="notes-dialog" aria-labelledby="notes-title">
+    <div class="dialog-heading"><h2 id="notes-title">這個動畫在說什麼？</h2><button id="close-notes" class="icon-button" type="button" aria-label="關閉說明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <p>機翼形狀與迎角共同改變氣流和壓力分布。將整個機翼表面的壓力作用加總，垂直於來流的分量就是升力；機翼也使氣流向下偏轉。</p>
+    <p>上下方的空氣各自依局部流速前進，沒有必須同時抵達翼尾的條件。彎曲翼型在 0° 迎角時，也可能產生升力。</p>
+    <p>本頁以彎曲翼型的二維理想附著流呈現趨勢。0°–12° 是本頁的教學操作範圍；實際失速角會隨翼型及飛行條件改變。模型未涵蓋黏性、失速與翼尖效應。色彩表示壓力，小箭頭的長度經誇張處理以便觀察，升力條僅供相對比較。</p>
+    <p class="source-links">延伸閱讀：<a href="https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/what-is-lift/" target="_blank" rel="noopener noreferrer">NASA · What is Lift?</a><a href="https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/bernoulli-and-newton/" target="_blank" rel="noopener noreferrer">NASA · Bernoulli and Newton</a></p>
+  </dialog>
+  <p id="announcement" class="sr-only" aria-live="polite"></p>
+  <noscript><p class="noscript-message">請啟用 JavaScript 以播放互動動畫。機翼上下表面的壓力分布差異會產生升力；機翼也使氣流向下偏轉。</p></noscript>
+  <script>
+  (function(){
+    // 上一頁／下一頁：href 由 build.py 依頁序填入；href 為 # 時不動作。鍵盤 ← → 與 PageUp／PageDown 同步觸發，輸入框、對話框內不觸發。
+    var prev=document.querySelector('[data-nav="prev"]'),next=document.querySelector('[data-nav="next"]');
+    function go(a){var h=a&&a.getAttribute('href');if(h&&h!=='#')location.href=h}
+    [prev,next].forEach(function(a){a.addEventListener('click',function(e){if(a.getAttribute('href')==='#')e.preventDefault()})});
+    document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;if(e.target&&e.target.closest&&e.target.closest('input,textarea,select,[contenteditable]'))return;if(document.querySelector('dialog[open]'))return;if(e.key==='ArrowRight'||e.key==='PageDown')go(next);if(e.key==='ArrowLeft'||e.key==='PageUp')go(prev)});
+  })();
+  </script>
+</body>
+</html>

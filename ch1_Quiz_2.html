@@ -1,0 +1,105 @@
+<!-- 產生器範本：由 build.py 讀取，{{...}} 由 pages/*.md 填入。頁首帶、頁尾署名、翻頁按鈕與動畫、雷達背景都固定在這裡，不在內容檔裡。 -->
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="第一章第 2 節被什麼管的隨堂考，主管機關、註冊、空域、地面與罰則 49 題。">
+  <title>隨堂考｜2 被什麼管</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body class="slide-fixed">
+  <canvas id="radar" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="stage" id="stage">
+    <div class="slide-top" role="banner"><span class="eyebrow"><b>無人機</b> ／ 專業基本級操作證</span></div>
+    <header class="slide-head">
+      <h1 class="title-line">
+        <span class="title-main">隨堂考</span>
+        <span class="title-sep" aria-hidden="true">－</span>
+        <span class="title-sub">2 被什麼管</span>
+      </h1>
+      <p class="title-lead">一次五題，點選項立即看答案，骰子隨機換題　；　題目取自民航局專業操作證學科題庫。</p>
+    </header>
+
+    <section class="slide-content">
+    <div class="quiz" data-show="5">
+      <section class="qcard long" data-qid="Q5" data-answer="c"><p class="q">外國人領有外國政府對於所持有遙控無人機之註冊、操作證及檢驗合格等證明文件者，必須向哪個單位申請認可後，於遵守我國相關法令下從事遙控無人機活動？</p><div class="opts"><button type="button" class="opt" data-opt="a"><span class="k">A</span><span>外交部。</span></button><button type="button" class="opt" data-opt="b"><span class="k">B</span><span>駐外單位。</span></button><button type="button" class="opt" data-opt="c"><span class="k">C</span><span>民航局。</span></button><button type="button" class="opt" data-opt="d"><span class="k">D</span><span>科技部。</span></button></div></section>
+      <section class="qcard" data-qid="Q13" data-answer="a"><p class="q">針對違反規範之遙控無人機操作人及所有人所處以罰鍰額度，係衡量何種因素而定？</p><div class="opts"><button type="button" class="opt" data-opt="a"><span class="k">A</span><span>公眾利益及安全財產危害程度。</span></button><button type="button" class="opt" data-opt="b"><span class="k">B</span><span>政府稅收及國家經濟指數。</span></button><button type="button" class="opt" data-opt="c"><span class="k">C</span><span>國力強弱及世界局勢。</span></button><button type="button" class="opt" data-opt="d"><span class="k">D</span><span>教育程度及人民素質等。</span></button></div></section>
+      <section class="qcard" data-qid="Q21" data-answer="a"><p class="q">航空站或飛行場四周之一定距離範圍係由哪個機關進行公告？</p><div class="opts"><button type="button" class="opt" data-opt="a"><span class="k">A</span><span>民航局。</span></button><button type="button" class="opt" data-opt="b"><span class="k">B</span><span>衛福部。</span></button><button type="button" class="opt" data-opt="c"><span class="k">C</span><span>內政部。</span></button><button type="button" class="opt" data-opt="d"><span class="k">D</span><span>文化部。</span></button></div></section>
+      <section class="qcard" data-qid="Q22" data-answer="d"><p class="q">直轄市、縣（市）政府依民航法第99條之13第2項所規範之區域內，得依公益及安全需要，進行哪些項目之公告？</p><div class="opts"><button type="button" class="opt" data-opt="a"><span class="k">A</span><span>遙控無人機活動區域。</span></button><button type="button" class="opt" data-opt="b"><span class="k">B</span><span>遙控無人機活動時間。</span></button><button type="button" class="opt" data-opt="c"><span class="k">C</span><span>其他管理事項。</span></button><button type="button" class="opt" data-opt="d"><span class="k">D</span><span>以上皆是。</span></button></div></section>
+      <section class="qcard" data-qid="Q23" data-answer="b"><p class="q">中央主管機關認有禁止或限制遙控無人機飛航活動需求者，得提請所在地哪個機關進行公告？</p><div class="opts"><button type="button" class="opt" data-opt="a"><span class="k">A</span><span>鄉鎮區公所。</span></button><button type="button" class="opt" data-opt="b"><span class="k">B</span><span>直轄市、縣（市）政府。</span></button><button type="button" class="opt" data-opt="c"><span class="k">C</span><span>地方派出所。</span></button><button type="button" class="opt" data-opt="d"><span class="k">D</span><span>地方農會。</span></button></div></section>
+      <aside class="qsum" aria-label="計分"><p class="score"><b id="quiz-score">0</b>/ <span id="quiz-total">5</span></p><p class="hint" id="quiz-hint">點選項作答，答完自動計分</p><div class="qbtns"><button type="button" id="quiz-dice" class="dice" title="從題池 49 題隨機抽換"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="2.5" width="15" height="15" rx="3"/><circle cx="6.5" cy="6.5" r="1.4"/><circle cx="13.5" cy="6.5" r="1.4"/><circle cx="10" cy="10" r="1.4"/><circle cx="6.5" cy="13.5" r="1.4"/><circle cx="13.5" cy="13.5" r="1.4"/></svg>隨機問題</button><button type="button" id="quiz-reveal">顯示全部答案</button><button type="button" id="quiz-reset">重做</button></div></aside>
+    </div>
+    <script type="application/json" id="quiz-pool">[{"id": "Q5", "description": "外國人領有外國政府對於所持有遙控無人機之註冊、操作證及檢驗合格等證明文件者，必須向哪個單位申請認可後，於遵守我國相關法令下從事遙控無人機活動？", "options": {"a": "外交部。", "b": "駐外單位。", "c": "民航局。", "d": "科技部。"}, "answer": "c", "explain": ""}, {"id": "Q13", "description": "針對違反規範之遙控無人機操作人及所有人所處以罰鍰額度，係衡量何種因素而定？", "options": {"a": "公眾利益及安全財產危害程度。", "b": "政府稅收及國家經濟指數。", "c": "國力強弱及世界局勢。", "d": "教育程度及人民素質等。"}, "answer": "a", "explain": ""}, {"id": "Q21", "description": "航空站或飛行場四周之一定距離範圍係由哪個機關進行公告？", "options": {"a": "民航局。", "b": "衛福部。", "c": "內政部。", "d": "文化部。"}, "answer": "a", "explain": ""}, {"id": "Q22", "description": "直轄市、縣（市）政府依民航法第99條之13第2項所規範之區域內，得依公益及安全需要，進行哪些項目之公告？", "options": {"a": "遙控無人機活動區域。", "b": "遙控無人機活動時間。", "c": "其他管理事項。", "d": "以上皆是。"}, "answer": "d", "explain": ""}, {"id": "Q23", "description": "中央主管機關認有禁止或限制遙控無人機飛航活動需求者，得提請所在地哪個機關進行公告？", "options": {"a": "鄉鎮區公所。", "b": "直轄市、縣（市）政府。", "c": "地方派出所。", "d": "地方農會。"}, "answer": "b", "explain": ""}, {"id": "Q24", "description": "政府機關（構）、學校或法人因執行業務需於禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者，應申請何者會商目的事業主管機關同意後，始得為之？", "options": {"a": "鄉鎮區公所。", "b": "衛福部。", "c": "民航局。", "d": "科技部。"}, "answer": "c", "explain": ""}, {"id": "Q25", "description": "政府機關（構）、學校或法人因執行業務需於直轄市、縣（市）政府所公告之遙控無人機活動區域、時間及其他管理事項外從事飛航活動者，應申請何者會商相關中央主管機關同意後，始得為之？", "options": {"a": "直轄市、縣（市）政府。", "b": "衛福部。", "c": "農委會。", "d": "交通部。"}, "answer": "a", "explain": ""}, {"id": "Q26", "description": "遙控無人機未經同意飛入禁航區、限航區，得由何者採取適當措施予以制止或排除？", "options": {"a": "交通警察大隊。", "b": "禁航區、限航區之管理人。", "c": "鄉鎮區公所。", "d": "地方派出所。"}, "answer": "b", "explain": ""}, {"id": "Q27", "description": "遙控無人機未經同意飛入航空站或飛行場四周之一定距離範圍內者，航空站、飛行場之經營人或管理人得會同何者予以取締？", "options": {"a": "當地里長。", "b": "地方派出所。", "c": "航空警察局。", "d": "交通警察大隊。"}, "answer": "c", "explain": ""}, {"id": "Q28", "description": "遙控無人機未經同意飛入直轄市、縣（市）政府所公告之活動區域、時間及其他管理事項外者，得由何者進行取締？", "options": {"a": "直轄市、縣（市）政府。", "b": "鄉鎮區公所。", "c": "地方派出所。", "d": "衛福部。"}, "answer": "a", "explain": ""}, {"id": "Q33", "description": "從事休閒娛樂用途之遙控無人機不得於下列哪個區域進行飛航活動？", "options": {"a": "人群聚集或室外集會遊行上空。", "b": "經地方政府同意開放無人機活動之公園綠地。", "c": "經地方政府同意開放無人機活動之人煙稀少區。", "d": "經地方政府同意開放無人機活動之河灘地。"}, "answer": "a", "explain": ""}, {"id": "Q43", "description": "遙控無人機所有人或操作人違反「禁航區、限航區及航空站或飛行場四周之一定距離範圍內從事飛航活動」之相關規定者，民航局除廢止其操作證並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "3萬元以上18萬元以下。", "b": "5萬元以上28萬元以下。", "c": "10萬元以上48萬元以下。", "d": "30萬元以上150萬元以下。"}, "answer": "d", "explain": ""}, {"id": "Q44", "description": "遙控無人機所有人或操作人違反「不得逾距地面或水面高度400呎從事飛航活動」之規定者，民航局除廢止其操作證並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "30萬元以上150萬元以下。", "b": "1萬元以上10萬元以下。", "c": "20萬元以上50萬元以下。", "d": "5萬元以上30萬元以下。"}, "answer": "a", "explain": ""}, {"id": "Q47", "description": "遙控無人機之所有人或操作人違反「遙控無人機註冊或標明註冊號碼」之相關規定者，除禁止其活動，情節重大者並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "10萬元以上48萬元以下。", "b": "8萬元以上38萬元以下。", "c": "5萬元以上28萬元以下。", "d": "3萬元以上15萬元以下。"}, "answer": "d", "explain": ""}, {"id": "Q48", "description": "遙控無人機之所有人或操作人違反「直轄市、縣（市）政府公告之區域、時間及其他管理事項」之相關規定者，除禁止其活動，情節重大者並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "3萬元以上15萬元以下。", "b": "5萬元以上28萬元以下。", "c": "8萬元以上38萬元以下。", "d": "15萬元以上30萬元以下。"}, "answer": "a", "explain": ""}, {"id": "Q49", "description": "遙控無人機之所有人或操作人違反「遙控無人機飛航活動應遵守之規定」者，除禁止其活動，情節重大者並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "10萬元以上48萬元以下。", "b": "8萬元以上38萬元以下。", "c": "5萬元以上28萬元以下。", "d": "3萬元以上15萬元以下。"}, "answer": "d", "explain": ""}, {"id": "Q50", "description": "違反「射頻識別、檢驗、認可、維修與檢查、飛航活動之活動許可及內容、製造者與進口者之登錄及責任、飛航安全相關事件之通報等事項」規定者，除禁止其活動，情節重大者並得沒入遙控無人機外，另處多少新臺幣之罰鍰？", "options": {"a": "1萬元以上150萬元以下。", "b": "5萬元以上498萬元以下。", "c": "8萬元以上798萬元以下。", "d": "10萬元以上998萬元以下。"}, "answer": "a", "explain": ""}, {"id": "Q59", "description": "下列何者較適合做為遙控無人機註冊號碼之標明處所？", "options": {"a": "起落架上。", "b": "螺旋槳面上。", "c": "機身未遮蔽之平整面上。", "d": "電池蓋上。"}, "answer": "c", "explain": ""}, {"id": "Q60", "description": "註冊號碼應以標籤、鐫刻、噴漆或其他能辨識之方式標明，並於每次飛航時符合下列何項要求？", "options": {"a": "確保不至脫落。", "b": "保持清潔。", "c": "能明顯辨識。", "d": "以上皆是。"}, "answer": "d", "explain": ""}, {"id": "Q61", "description": "遙控無人機註冊號碼之標漆位置依法應位於何處？", "options": {"a": "固定結構內部。", "b": "固定結構外部。", "c": "轉動機構外部。", "d": "轉動機構內部。"}, "answer": "b", "explain": ""}, {"id": "Q62", "description": "註冊號碼之顏色應以肉眼即能辨識，並應符合下列何項要求？", "options": {"a": "融入背景顏色。", "b": "與背景顏色相近。", "c": "與背景明顯反襯。", "d": "無特別規定。"}, "answer": "c", "explain": ""}, {"id": "Q63", "description": "有關遙控無人機註冊號碼之使用，下列何者正確？", "options": {"a": "不得偽造。", "b": "不得變造。", "c": "不得矇領。", "d": "以上皆是。"}, "answer": "d", "explain": ""}, {"id": "Q64", "description": "有關遙控無人機註冊號碼之使用，下列何者正確？", "options": {"a": "不得於任何未註冊之遙控無人機上使用。", "b": "可於他人未註冊之遙控無人機上使用。", "c": "可於自己所有未註冊之遙控無人機上使用。", "d": "使用狀況視遙控無人機型式而定。"}, "answer": "a", "explain": ""}, {"id": "Q65", "description": "最大起飛重量超過一定重量之遙控無人機應具有射頻識別功能，其一定重量，係由下列哪個機關公告之？", "options": {"a": "衛福部。", "b": "內政部。", "c": "科技部。", "d": "民航局。"}, "answer": "d", "explain": ""}, {"id": "Q68", "description": "自國外進口之遙控無人機，應由何者依規定向民航局申請型式檢驗？", "options": {"a": "操作人。", "b": "所有人。", "c": "進口者。", "d": "設計者。"}, "answer": "c", "explain": ""}, {"id": "Q86", "description": "政府機關（構）、學校或法人欲於直轄市、縣（市）政府公告之禁止、限制區域內從事遙控無人機飛航活動者，應至少於活動日前多久檢附計畫書提出申請？", "options": {"a": "30日前。", "b": "20日前。", "c": "15日前。", "d": "10日前。"}, "answer": "c", "explain": ""}, {"id": "Q87", "description": "最大起飛重量2公斤以上且裝置導航設備之遙控無人機遭受實質損害或失蹤時，所有人或操作人應於發生或得知消息後多久內填具飛航安全相關事件報告表通報民航局？", "options": {"a": "6小時內。", "b": "12小時內。", "c": "24小時內。", "d": "48小時內。"}, "answer": "c", "explain": ""}, {"id": "Q88", "description": "當遙控無人機發生與其他航空器或障礙物接近或碰撞之事故時，所有人或操作人應於發生或得知消息後多久內填具飛航安全相關事件報告表通報民航局？", "options": {"a": "6小時內。", "b": "12小時內。", "c": "24小時內。", "d": "48小時內。"}, "answer": "c", "explain": ""}, {"id": "Q89", "description": "當發生遙控無人機飛航安全相關事件時，民航局針對操作人可採取哪項措施？", "options": {"a": "得逕為暫停其操作或飛航活動。", "b": "經操作人同意後，得暫停其操作或飛航活動。", "c": "經所在地方政府同意後，得暫停其操作或飛航活動。", "d": "需待調查結束後並經操作人同意，使得暫停其操作或飛航活動。"}, "answer": "a", "explain": ""}, {"id": "Q91", "description": "遙控無人機經型式檢驗合格後，除因改裝需重新辦理檢驗及註冊異動外，是否需再辦理定期檢驗？", "options": {"a": "仍需再辦理定期檢驗。", "b": "無需再辦理定期檢驗。", "c": "操作人認為有需要則應再辦理定期檢驗。", "d": "所有人認為有需要則應再辦理定期檢驗。"}, "answer": "b", "explain": ""}, {"id": "Q97", "description": "針對自然人所有之遙控無人機，法規明訂其最大起飛重量達多少以上，即應辦理註冊？", "options": {"a": "250公克以上。", "b": "1公斤以上。", "c": "2公斤以上。", "d": "15公斤以上。"}, "answer": "a", "explain": ""}, {"id": "Q98", "description": "遙控無人機發生滅失情形者，其所有人申請註銷註冊之程序為何？", "options": {"a": "事實發生日起15日內向民航局申請。", "b": "事實發生日起20日內向民航局申請。", "c": "事實發生日起15日內向所在地方政府申請。", "d": "事實發生日起20日內向所在地方政府申請。"}, "answer": "a", "explain": ""}, {"id": "Q99", "description": "遙控無人機註冊號碼之有效期限為幾年？", "options": {"a": "1年。", "b": "2年。", "c": "3年。", "d": "4年。"}, "answer": "b", "explain": ""}, {"id": "Q100", "description": "法規規定最大起飛重量達多少以上且裝置導航設備之遙控無人機，應具備防止其進入禁、限航區及航空站或飛行場四周一定距離範圍內之圖資軟體系統？", "options": {"a": "250公克以上。", "b": "1公斤以上。", "c": "2公斤以上。", "d": "15公斤以上。"}, "answer": "b", "explain": ""}, {"id": "Q109", "description": "政府機關（構）、學校或法人欲於禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者，應於活動日前多久提出申請？", "options": {"a": "15日前。", "b": "10日前。", "c": "5日前。", "d": "3日前。"}, "answer": "a", "explain": ""}, {"id": "Q110", "description": "政府機關（構）、學校或法人於涉及軍事航空管理機關（構）管理之禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者，應於活動日前多久提出申請？", "options": {"a": "30日前。", "b": "20日前。", "c": "15日前。", "d": "10日前。"}, "answer": "a", "explain": ""}, {"id": "Q111", "description": "政府機關（構）、學校或法人於直轄市、縣（市）政府公告之禁止、限制區域內從事遙控無人機飛航活動時，如有跨縣市飛航情形，應向哪個機關提出申請？", "options": {"a": "飛經之直轄市、縣（市）政府。", "b": "起飛地點所在直轄市、縣（市）政府提出申請，經所在地及跨縣市政府同意。", "c": "降落地點所在直轄市、縣（市）政府。", "d": "降落地點所鄰近直轄市、縣（市）政府。"}, "answer": "b", "explain": ""}, {"id": "Q112", "description": "當災害發生時，欲於各級政府依災害防救法劃定之警戒區域或指定區域內從事遙控無人機飛航活動者，應聽從何者之統一指揮調度？", "options": {"a": "民航局局長。", "b": "當地警察局局長。", "c": "當地消防局局長。", "d": "各級政府災害應變中心指揮官。"}, "answer": "d", "explain": ""}, {"id": "Q113", "description": "政府機關（構）、學校或法人依法應保存遙控無人機之註冊號碼、活動日期、活動區域、飛航時間、飛航性質、操作人員姓名、維護或修理、改裝等紀錄，並應保存多久？", "options": {"a": "1年。", "b": "2年。", "c": "3年。", "d": "5年。"}, "answer": "b", "explain": ""}, {"id": "Q114", "description": "有關外國人領有外國政府所核發遙控無人機相關證照者，應向民航局申請認可後使得於本區從事遙控無人機飛航活動之規定，是否亦適用於領有外國政府核發證照之本國人？", "options": {"a": "是，本國人亦適用。", "b": "否，本國人不適用。", "c": "視活動時間決定適用與否。", "d": "視活動性質決定適用與否。"}, "answer": "b", "explain": ""}, {"id": "Q115", "description": "某合格無人機業務團隊受委託以遙控無人機執行山區電纜線路查檢工作。惟因路況不佳，該團隊無法抵達預訂工作區域，為不影響任務進行，成員臨時決定仍將無人機飛至工作區，並以望遠鏡保持與其間之視線接觸。請問該團隊之決定是否違反無人機相關規範？", "options": {"a": "並無違反遙控無人機相關規範。", "b": "已違反遙控無人機相關規範。", "c": "有無違反規範視任務執行結果而定。", "d": "資訊不足，無法判斷。"}, "answer": "b", "explain": ""}, {"id": "Q120", "description": "遙控無人機飛航活動對於其他航空器活動、地面人群及建築物所帶來之影響顯而易見，請問就操作人而言，應有下列哪項正確觀念？", "options": {"a": "反正其他目標物均很明顯，發現時再緊急避讓即可。", "b": "應於可操作區域進行飛航、遵守相關規定，隨時注意並防止無人機接近任何其他目標物。", "c": "只要於可操作區域內飛航，無人機是否接近其他目標物非操作者的責任。", "d": "進行無人機飛航活動時，若有目視觀察員在側，由目視觀察員全權負責無人機與其他目標物之隔離工作。"}, "answer": "b", "explain": ""}, {"id": "Q122", "description": "某電影拍攝作業因取景需求，導演指示團隊將無人機飛入民用航空法所規範之限航區內執行空拍任務，請問下列敘述何者正確？", "options": {"a": "只要在限航區內不要待太久，趕緊拍攝完畢就好。", "b": "非經核准，限航區內不得從事遙控無人機飛航活動。", "c": "若限航區位處人煙罕至處，飛進去拍攝無妨。", "d": "只要有助手協助觀察限航區內狀況，即可飛入拍攝。"}, "answer": "b", "explain": ""}, {"id": "Q123", "description": "國內某無人機團隊有名外籍成員，雖領有該國政府所核發之合格無人機操作證，惟尚未獲得本國民航局認可。針對該名外籍成員欲參與團隊於本國境內之無人機飛航活動之敘述，下列何者正確？", "options": {"a": "該員已領有外國政府核發證照，理當可於本國境內從事飛航活動。", "b": "如該員已具備無人機操作經歷滿3年以上，即可直接於本國境內從事飛航活動。", "c": "該員必須獲得本國民航局認可，使得於本國境內從事飛航活動。", "d": "只要無人機團隊有人願簽切結書擔保活動之安全，該員即可於本國境內從事飛航活動。"}, "answer": "c", "explain": ""}, {"id": "Q127", "description": "小陳為某新成立無人機業務公司負責人，目前除積極招兵買馬外，亦準備購入20台不同構型、重量之業務用無人機。請問小陳對於該公司所購入無人機之註冊相關規定，下列敘述何者正確？", "options": {"a": "所有無人機均須辦理註冊。", "b": "最大起飛重量超過250公克之無人機才須辦理註冊。", "c": "僅須為所採購無人機之半數辦理註冊即可。", "d": "由主管機關決定應辦理註冊之無人機數量。"}, "answer": "a", "explain": ""}, {"id": "Q128", "description": "某公司因業務需求所購入之一批無人機剛完成向民航局申請之註冊程序，請問該公司對於註冊號碼之標註規定所應有認知，下列何者為非？", "options": {"a": "註冊號碼標註位置須能清楚辨識。", "b": "註冊號碼得以噴漆方式標註。", "c": "須確保註冊號碼不會於每次飛航活動中脫落。", "d": "無人機之移動結構外部最適合作為註冊號碼標註之處。"}, "answer": "d", "explain": ""}, {"id": "Q129", "description": "某無人機團隊因特殊任務需求所新購之一架無人機尚未完成註冊程序，惟因任務在即，有成員建議先借用另一架已註冊無人機之註冊號碼，再向民航局報備即可。請問針對該成員之主張，下列何者為正確？", "options": {"a": "註冊號碼本來就可以互相借用，並無違反相關規定。", "b": "只要所借用註冊號碼同屬該團隊其他無人機所有，即無違反相關規定。", "c": "只要先向民航局報備獲准借用，即無違反相關規範。", "d": "註冊號碼不得借供於未註冊之無人機上使用，該成員之主張已明顯違反相關規範。"}, "answer": "d", "explain": ""}, {"id": "Q132", "description": "某電影公司欲拍攝高速公路警匪追逐場景，為求逼真效果，電影公司要求無人機團隊操作無人機近距離拍攝疾駛於高速公路上之車輛，請問操作人應有哪項正確認知？", "options": {"a": "這是訓練自己技術的好機會，應大膽接受任務。", "b": "看在電影公司給予高額酬勞的份上，理應接受該任務。", "c": "只要團隊多數人認為可以執行，即應接受該任務。", "d": "未經核准飛航前，無人機飛航活動應遠離高速公路至少30公尺以上，該任務顯違反規定，應予以拒絕。"}, "answer": "d", "explain": ""}, {"id": "Q139", "description": "某業餘玩家利用假日至一處未被劃設禁飛區域內進行無人機試飛活動，並預劃完成數項操作科目，此時已接近日落，尚有幾個科目未完成，請問有關下列該玩家應注意事項，何者正確？", "options": {"a": "該區域非為禁飛區，故該玩家於日落後仍可持續進行科目操作。", "b": "該玩家於日落前即應終止其飛航科目操作。", "c": "如果天氣良好即可於日落後持續進行飛航科目操作。", "d": "只要觀察四周無人，即可於日落後持續進行飛航科目操作。"}, "answer": "b", "explain": ""}]</script>
+    </section>
+
+    <footer class="slide-foot">
+      <a class="nav-btn nav-prev" href="ch1p20_2.4_Ground_Rules.html" data-nav="prev" aria-label="上一頁" title="上一頁">
+        <span class="nav-text">上一頁</span>
+        <svg class="nav-icon icon-rc" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+          <!-- 天線 -->
+          <path d="M14 16 L8 3" /><path d="M50 16 L56 3" />
+          <circle cx="8" cy="3" r="1.6" class="fill" /><circle cx="56" cy="3" r="1.6" class="fill" />
+          <!-- 機身 -->
+          <rect x="6" y="14" width="52" height="26" rx="7" />
+          <!-- 螢幕 -->
+          <rect x="26" y="19" width="12" height="7" rx="1.5" class="screen" />
+          <!-- 左右搖桿 -->
+          <circle cx="17" cy="28" r="6" /><circle cx="17" cy="28" r="1.8" class="fill stick stick-l" />
+          <circle cx="47" cy="28" r="6" /><circle cx="47" cy="28" r="1.8" class="fill stick stick-r" />
+          <!-- 天線訊號（僅左側；以左天線尖端 8,3 為圓心的兩道波紋，內圈先亮） -->
+          <g class="signal"><path class="wave wave-1" d="M3.17 4.29 A5 5 0 0 1 7.56 -1.98" /><path class="wave wave-2" d="M-0.21 5.2 A8.5 8.5 0 0 1 7.26 -5.47" /></g>
+          <!-- 開關 -->
+          <path d="M28 33 h8" /><path d="M30 36 h4" />
+        </svg>
+      </a>
+      <p>台中市政府輔導　台中無人機創造發展基地－無人機教材 專業基本級操作證</p>
+      <a class="nav-btn nav-next" href="ch1p21_3.1_Who_Regulates_Operator.html" data-nav="next" aria-label="下一頁" title="下一頁">
+        <span class="nav-text">下一頁</span>
+        <svg class="nav-icon icon-fpv" viewBox="-12 5 112 52" aria-hidden="true" focusable="false">
+          <!-- viewBox 從 x=-12、y=5 起算：左側加寬 12 單位放尾流線；圖形整體上移 5 單位，貼近「下一頁」文字（與遙控器對齊） -->
+          <!-- 尾流線（與飛行方向平行，微微向右上） -->
+          <g class="trail"><path d="M-4 25 l16 -0.8" /><path d="M-11 31 l24 -1.3" /><path d="M-5 37 l18 -0.9" /></g>
+          <g class="quad">
+            <!-- 靜態抬頭角；CSS 動畫套在外層 .quad，不會覆蓋這個 transform -->
+            <g transform="rotate(-8 56 30)">
+              <!-- 後方（遠側）機臂、馬達、螺旋槳：較細較小 -->
+              <path class="arm arm-far" d="M46.2 24.6 L29.3 13.1" /><path class="arm arm-far" d="M61.8 25.8 L68.7 15.5" />
+              <path class="motor" d="M29.3 13.1 v-3" /><path class="motor" d="M68.7 15.5 v-3" />
+              <ellipse class="prop prop-far" cx="29.3" cy="10.1" rx="10.2" ry="4.8" /><ellipse class="prop prop-far" cx="68.7" cy="12.5" rx="10.8" ry="5" />
+              <!-- 機身：側板（厚度）＋上蓋 -->
+              <path class="side" d="M45.9 29.2 L50.3 34.2 L65.8 35.4 L67.7 31 v2.6 L65.8 38 L50.3 36.8 L45.9 31.8 Z" />
+              <path class="plate" d="M67.7 31 L65.8 35.4 L50.3 34.2 L45.9 29.2 L46.2 24.6 L61.8 25.8 Z" />
+              <!-- 天線（機尾，向後上方） -->
+              <path d="M48.4 27.2 L44 13.5" /><circle cx="44" cy="13.5" r="1.2" class="fill" />
+              <!-- 前方（近側）機臂、馬達 -->
+              <path class="arm arm-near" d="M50.3 34.2 L43.3 44.5" /><path class="arm arm-near" d="M65.8 35.4 L81.3 46.9" />
+              <path class="motor" d="M43.3 44.5 v-3" /><path class="motor" d="M81.3 46.9 v-3" />
+              <!-- 前方（近側）螺旋槳：較大 -->
+              <ellipse class="prop" cx="43.3" cy="41.5" rx="11.4" ry="5.4" /><ellipse class="prop" cx="81.3" cy="43.9" rx="12" ry="5.8" />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="quiz.js"></script>
+  <script>
+  (function(){
+    // 上一頁／下一頁：href 由 build.py 依頁序填入；href 為 # 時不動作。鍵盤 ← → 與 PageUp／PageDown 同步觸發，輸入框、對話框內不觸發。
+    var prev=document.querySelector('[data-nav="prev"]'),next=document.querySelector('[data-nav="next"]');
+    function go(a){var h=a&&a.getAttribute('href');if(h&&h!=='#')location.href=h}
+    [prev,next].forEach(function(a){a.addEventListener('click',function(e){if(a.getAttribute('href')==='#')e.preventDefault()})});
+    document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;if(e.target&&e.target.closest&&e.target.closest('input,textarea,select,video,audio,[contenteditable]'))return;if(document.querySelector('dialog[open]'))return;if(e.key==='ArrowRight'||e.key==='PageDown')go(next);if(e.key==='ArrowLeft'||e.key==='PageUp')go(prev)});
+  })();
+  </script>
+</body>
+</html>

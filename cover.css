@@ -1,0 +1,8 @@
+/* 封面（type: cover）：標題框與內容框合併成一塊置中區，y 67–680 */
+.cover{position:absolute;left:112px;width:1056px;top:67px;height:613px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:14px}
+.cover-kicker{margin:0 0 10px;color:var(--orange);font:700 .95rem var(--font-num);letter-spacing:.3em}
+.cover-kicker:empty{display:none}
+.cover-title{margin:0;color:var(--cream);font:700 64pt/1.15 var(--font-zh);letter-spacing:.02em}
+.cover-sub{margin:0;color:var(--muted);font:700 22pt/1.4 var(--font-zh);letter-spacing:.04em}
+.cover-sub::before{content:"";display:block;width:120px;height:2px;margin:6px auto 22px;background:var(--orange)}
+.cover .cover-extra{margin:26px 0 0;color:var(--faint);font-size:1.05rem;line-height:1.6}

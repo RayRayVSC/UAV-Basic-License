@@ -1,0 +1,117 @@
+/* 通用頁面元件（type: page）。暫定樣式，待作者確認後定案；詳見 CLAUDE.md §8。
+   放在內容框 .slide-content 內使用。字級：正文沿用母片 18 pt（.txt），卡片與圖說較小。 */
+
+/* ---- 正文區：18 pt、行距 100%、段前 9 pt（同 slide.css 的內容框內文規格） ---- */
+.txt{min-width:0}
+.txt>p,.txt>ul,.txt>ol{margin:0 0 12px;color:var(--cream);font-size:18pt;line-height:1.2}
+.txt>ul{list-style:"◦ ";padding-left:1.1em}
+.txt>ol{padding-left:1.3em}
+.txt li{margin:0 0 6px}
+.txt li small,.txt p small{display:block;color:var(--muted);font-size:.85rem;line-height:1.35;margin-top:2px}
+.txt b.law{font-family:var(--font-num);color:var(--orange)}
+.txt.compact>p,.txt.compact>ul,.txt.compact>ol{font-size:15pt;line-height:1.25}
+
+/* ---- 小標 ---- */
+.slide-content h2.sub{margin:0 0 8px;font:700 1.15rem var(--font-zh);color:var(--orange);letter-spacing:.04em}
+
+/* ---- 文＋圖：左文右圖（.rev 為左圖右文） ---- */
+/* 圖片高度優先：單圖最高 390 px（內容框 421 px 扣圖說），寬度依比例、最寬 560 px；右欄寬度＝圖寬，文字吃剩下的寬度 */
+.fig-row{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:12px 28px;align-items:start;min-width:0}
+.fig-row.rev{grid-template-columns:max-content minmax(0,1fr)}
+.fig-row>figure.fig{display:table}
+.fig-row>figure.fig>figcaption{display:table-caption;caption-side:bottom}
+.fig-row>figure.fig :is(img,video){max-width:560px}
+.fig-row.narrow>figure.fig :is(img,video){max-width:340px}
+.fig-row.big>figure.fig :is(img,video){max-width:700px}
+.fig-row.mid>figure.fig :is(img,video){max-width:480px}
+.fig-row.wide{grid-template-columns:minmax(0,1fr) 600px}
+/* 圖高上限走 --fh：預設 390；.h180/.h220 或 style="--fh:260px" 覆寫 */
+figure.fig{margin:0;min-width:0;--fh:390px}
+figure.fig img,figure.fig video{display:block;width:auto;max-width:100%;height:auto;max-height:var(--fh);border:1px solid rgba(201,184,167,.22);background:#fff}
+figure.fig video{background:#000}
+figure.fig figcaption{margin-top:6px;color:var(--faint);font-size:.74rem;line-height:1.4;text-align:center}
+figure.fig.full{display:flex;flex-direction:column;align-items:center}
+figure.fig.h220{--fh:220px}
+figure.fig.h180{--fh:180px}
+figure.fig.portrait img{margin:0 auto}
+
+/* ---- 圖片列：二或三張並排，高度隨欄寬、最高 300 px ---- */
+.fig-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fig-strip figure.fig{--fh:300px}
+.fig-strip figure.fig img{margin:0 auto}
+.fig-strip.h220 figure.fig{--fh:220px}
+.fig-strip.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* ---- 佔位（圖或影片未放） ---- */
+.placeholder{display:flex;align-items:center;justify-content:center;min-height:200px;border:1px dashed rgba(255,107,44,.5);color:rgba(255,107,44,.75);font-size:.9rem;letter-spacing:.06em;text-align:center;padding:8px}
+.placeholder.sm{min-height:150px}
+
+/* ---- 方塊網格 ---- */
+.grid2,.grid3,.grid5{display:grid;gap:12px;min-width:0}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.box{padding:12px 14px;background:var(--ink-2);border:solid rgba(201,184,167,.22);border-width:2px 1px 1px 2px;min-width:0}
+.box h3{margin:0 0 6px;font:700 1.05rem var(--font-zh);color:var(--cream);display:flex;align-items:center;gap:8px}
+.box h3 .tag{font-family:var(--font-num);font-size:.78rem;padding:2px 8px;border-radius:999px;background:var(--orange);color:#2b0f00;letter-spacing:.04em;white-space:nowrap}
+.box h3 .tag.basic{background:var(--sheet-orange);color:#3a1b00}
+.box h3 .tag.green{background:var(--sheet-green);color:#1d3311}
+.box h3 .tag.blue{background:var(--sheet-blue);color:#17294d}
+.box h3 .tag.pink{background:var(--sheet-pink);color:#4a1216}
+.box p,.box ul,.box ol{margin:0;color:var(--cream);font-size:.92rem;line-height:1.45}
+.box ul{list-style:"◦ ";padding-left:1.2em}
+.box ol{padding-left:1.3em}
+.box li{margin:0 0 3px}
+.box small,.box .muted{color:var(--muted);font-size:.8rem}
+.box.accent{border-color:rgba(255,107,44,.6);background:rgba(255,107,44,.08)}
+.cards.even{grid-template-columns:1fr 1fr}
+
+/* ---- 流程：橫向步驟 ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 8px;min-width:0}
+.flow .step{padding:10px 16px;border:1px solid rgba(255,107,44,.55);border-radius:10px;background:rgba(255,107,44,.08);color:var(--cream);font-size:1.05rem;font-weight:700;white-space:nowrap}
+.flow .step.hi{background:var(--orange);color:#2b0f00;border-color:var(--orange)}
+.flow .arrow{color:var(--orange);font-size:1.3rem;line-height:1}
+.flow.lg .step{font-size:1.2rem;padding:12px 20px}
+
+/* ---- 直向步驟（編號方塊） ---- */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;align-items:center;gap:14px;padding:8px 14px;background:var(--ink-2);border:solid rgba(201,184,167,.22);border-width:2px 1px 1px 2px;color:var(--cream);font-size:1.15rem;font-weight:700}
+.steps li::before{content:counter(s);flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--orange);color:#2b0f00;font:700 1.1rem var(--font-num)}
+.steps li small{color:var(--muted);font-size:.85rem;font-weight:400;margin-left:auto;white-space:nowrap}
+.steps.two{grid-template-columns:1fr 1fr}
+
+/* ---- 引句 ---- */
+.slide-content>p.quote{margin:0;padding:10px 18px;border-left:4px solid var(--orange);background:rgba(255,107,44,.06);color:var(--cream);font-size:1.3rem;line-height:1.5}
+.slide-content>p.quote b{color:var(--orange)}
+
+/* ---- 規格小表 ---- */
+table.spec{border-collapse:collapse;width:100%;font-size:.95rem;color:var(--cream)}
+table.spec th,table.spec td{padding:5px 10px;text-align:left;border-bottom:1px solid rgba(201,184,167,.16);vertical-align:top}
+table.spec th{width:9em;color:var(--muted);font-weight:700;background:#151210;white-space:nowrap}
+table.spec td b{color:var(--orange);font-family:var(--font-num)}
+
+/* ---- 頁底附註與 TIP（置中，左右內縮避開翻頁按鈕） ---- */
+.slide-content>p.note{margin:0;padding:0 130px;color:var(--faint);font-size:.74rem;line-height:1.4;text-align:center}
+/* 法規行：固定在內容框最底 38 px（y 642–680），左右各留 130 px 給翻頁按鈕；不佔內容流 */
+.slide-content>p.tip{position:absolute;left:0;right:0;bottom:0;height:38px;margin:0;padding:0 130px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:.74rem;line-height:1.4;text-align:center}
+.slide-content>p.note span,.slide-content>p.tip b{color:var(--orange);font-weight:700}
+.slide-content>p.tip b.law{font-family:var(--font-num);letter-spacing:.02em}
+
+/* ---- 卡片內的圖與外部連結 ---- */
+.card figure.fig{margin:0 0 8px}
+.card figure.fig img{max-height:150px;width:auto;margin:0 auto}
+.card figure.fig figcaption{text-align:left;margin-top:4px}
+figcaption a,.src-link{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(255,107,44,.5)}
+figcaption a:hover,.src-link:hover{border-bottom-color:var(--orange)}
+
+/* ---- 講師介紹：操作證正背面並排，名字標籤疊在證件上 ---- */
+.cert-pair{align-items:start}
+figure.fig.cert{text-align:center}
+figure.fig.cert .imgbox{position:relative;display:inline-block;max-width:100%}
+figure.fig.cert img{max-width:100%;max-height:385px;width:auto;height:auto;margin:0}
+.fig-label{position:absolute;transform:translate(-50%,-50%);padding:2px 10px;background:var(--orange);color:#2b0f00;font:700 1.15rem var(--font-num);border-radius:4px;letter-spacing:.04em;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+
+/* ---- 外部連結按鈕（開新分頁）：例如術科動畫模擬器 ---- */
+.txt p.links{margin:10px 0 0}
+a.btn-link{display:inline-block;padding:8px 16px;border:1px solid var(--orange);border-radius:8px;background:rgba(255,107,44,.1);color:var(--orange);font:700 1rem var(--font-zh);text-decoration:none;letter-spacing:.04em}
+a.btn-link:hover,a.btn-link:focus-visible{background:var(--orange);color:#2b0f00;outline:none}

@@ -1,0 +1,47 @@
+/* 矩陣表格元件（本張投影片獨有）：結構與格線。
+   放在內容框 .slide-content 內使用，載入順序在 slide.css 之後、主題檔之前；主題檔只改顏色、字級與裝飾。
+   層次：.slide-content（內容框）> .matrix-frame（元件外框）> .matrix（grid） */
+
+/* 元件外框：承載陰影、圓角與主題偽元素裝飾。grid 容器本身不能放偽元素（會變成格子），所以另設一層。 */
+.matrix-frame{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0}
+/* 在內容框內：列高全為固定值，表格高度由列高決定（表頭 240 + 資料列 160 + 外框），不填滿內容框；底下剩餘空間可放文字 */
+.slide-content>.matrix-frame{flex:0 0 auto}
+
+/* 結構：6 欄 grid，列以 display:contents 攤平；表頭 120／60／60，資料列 4 × 40 */
+.matrix{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(0,4fr) repeat(4,minmax(0,1fr));grid-template-rows:120px 60px 60px repeat(4,40px);gap:0;flex:1 1 auto;min-width:0;min-height:0;background:var(--ink);border:solid rgba(201,184,167,.22);border-width:2px 1px 1px 2px}
+.m-row{display:contents}
+.span-2{grid-column:span 2}.span-4{grid-column:span 4}.row-span-2{grid-row:span 2}.row-span-3{grid-row:span 3}
+
+/* 格線：儲存格右、下各 1 px；表頭與資料列之間加粗；紅區右緣橘線 */
+.m-cell{min-height:0;padding:17px;display:flex;flex-direction:column;justify-content:center;background:var(--ink-2);font-size:.92rem;font-weight:700;position:relative;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:filter .2s}
+.m-cell:not(.m-head){padding:12px 17px}
+.data-top{border-top:2px solid var(--ink)}
+.r-col{border-right:3px solid var(--orange)}
+.m-cell small{color:currentColor;opacity:.62;font-size:.67rem;font-weight:400}
+
+/* 表頭 */
+.m-head{color:var(--cream);background:var(--ink-4)}
+.m-head.zone-red,.m-head.zone-green{font-size:2.6rem;letter-spacing:.1em;font-weight:700}
+.m-head.zone-red small,.m-head.zone-green small{margin-top:0;font-size:.85rem;letter-spacing:.04em}
+.m-head.red-head,.m-head.cert-normal-head,.m-head.cert-plain-head{font-size:1.05rem;letter-spacing:0;padding:4px 2px;align-items:center;text-align:center;white-space:nowrap}
+.m-head.nav-head,.m-head.model-head{padding:4px 10px;line-height:1.35}
+.zone-red{background:#f4cccc;color:#7a1f1f;align-items:center;text-align:center}.zone-red small{color:currentColor;opacity:.8}
+.zone-green{background:#b6d7a8;color:#274e13;align-items:center}.zone-green small{color:currentColor;opacity:.8}
+.zone-red small,.zone-green small{display:block}
+.red-head{background:#b5472a;color:#fff1ea}
+.cert-normal-head{background:#38761d;color:#eaf5e2}
+.cert-plain-head{background:var(--cream);color:#241f1a;align-items:center}
+.learn-head{background:var(--sheet-pink);color:#4a1216}
+.nav-head{background:var(--sheet-cyan);color:#03303a;align-items:center;text-align:center}.model-head{background:var(--sheet-blue);color:#152847;align-items:center;text-align:center}
+
+/* 重量欄 */
+.m-cell.m-weight{color:var(--cream);background:#151210;padding:0 17px}.m-weight b{font-family:var(--font-num);font-size:1.2rem;letter-spacing:.01em}.m-weight .range{display:flex;justify-content:space-between;align-items:baseline}
+
+/* 資料格色塊 */
+.m-cell.pro{color:#3a1b00;background:var(--sheet-orange)}.m-cell.normal{color:#1d3311;background:var(--sheet-green)}.m-cell.free{color:#17294d;background:var(--sheet-blue)}.m-cell.free.nav-cyan{background:var(--sheet-cyan);color:#03303a}
+.m-cell.registered::after{content:"註冊";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;padding:4px 12px;color:#000;background:#fff;border:1px solid rgba(0,0,0,.25);border-radius:999px;font:.81rem var(--font-zh);font-weight:700;letter-spacing:.08em;line-height:1.3;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+
+/* 同色連動（app.js／projection-interactions.js 切換 is-active、has-active） */
+.m-cell[data-group]{cursor:pointer;transition:filter .25s ease,box-shadow .25s ease}
+.m-cell.is-active{z-index:2;filter:brightness(1.12) saturate(1.12);box-shadow:inset 0 0 0 2px rgba(11,10,9,.4),0 0 8px rgba(255,255,255,.12)}
+.matrix.has-active .m-cell[data-group]:not(.is-active){filter:brightness(.72) saturate(.7)}

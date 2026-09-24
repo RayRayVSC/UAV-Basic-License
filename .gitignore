@@ -1,0 +1,6 @@
+# 產生器輸出與快取，不進版本庫（python build.py 可重新產生）
+build/
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store

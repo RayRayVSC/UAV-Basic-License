@@ -1,0 +1,171 @@
+<!-- 產生器範本：由 build.py 讀取，{{...}} 由 pages/*.md 填入。頁首帶、頁尾署名、翻頁按鈕與動畫、雷達背景都固定在這裡，不在內容檔裡。 -->
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="臺灣遙控無人機專業操作證級別（I2、I、Ia、Ib、II、IIc、III、IIId）與操作限制排除分組（G1、G2、G3）。投影片版 1280×720。">
+  <title>操作證分級｜投影片版（固定 1280×720）</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="levels.css">
+</head>
+<body class="slide-fixed">
+  <canvas id="radar" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="stage" id="stage">
+    <div class="slide-top" role="banner"><span class="eyebrow"><b>無人機</b> ／ 專業基本級操作證</span></div>
+    <header class="slide-head">
+      <h1 class="title-line">
+        <span class="title-main">操作證分級</span>
+        <span class="title-sep" aria-hidden="true">－</span>
+        <span class="title-sub">1.3 專業操作證級別</span>
+      </h1>
+      <p class="title-lead">依重量級距與用途分類的級別代號　；　高級專業操作證的 G1、G2、G3 分組。各級能排除哪些限制，見下一頁。</p>
+    </header>
+
+    <section class="slide-content">
+    <div class="levels-frame">
+    <div class="lv levels" role="table" aria-label="操作證重量級距、用途限制與級別定義">
+      <div class="lv-row" role="row">
+        <div class="lv-cell lv-head corner row-span-2" role="columnheader" aria-rowspan="2"><span>用途限制</span><b>重量級距</b></div>
+        <div class="lv-cell lv-head zone-personal center row-span-2" role="columnheader" aria-rowspan="2">個人休閒娛樂用<small>無涉例外限制排除</small></div>
+        <div class="lv-cell lv-head zone-org center span-2" role="columnheader" aria-colspan="2">執行政府機關（構）、學校或法人業務</div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell lv-head basic-head center" role="columnheader" data-group="basic" tabindex="0">基本級專業操作證</div>
+        <div class="lv-cell lv-head adv-head center" role="columnheader" data-group="adv" tabindex="0">高級專業操作證</div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell weight data-top" role="rowheader"><b><span>0</span><span>~</span><span>&lt;2kg</span></b></div>
+        <div class="lv-cell free data-top" role="cell" data-group="free"><span class="lbl">免操作證</span></div>
+        <div class="lv-cell basic data-top" role="cell" data-group="basic"><b class="code">I2</b><span class="lbl">基本級專業操作證<small>未達 2 公斤註記</small></span></div>
+        <div class="lv-cell adv data-top" role="cell" data-group="adv"><b class="code">Ia2</b><span class="lbl">高級專業操作證<small>未達 2 公斤註記</small></span></div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell weight" role="rowheader"><b><span>2kg</span><span>~</span><span>&lt;15kg</span></b></div>
+        <div class="lv-cell normal" role="cell" data-group="normal"><span class="lbl">普通操作證<small>無裝置導航設備者免操作證</small></span></div>
+        <div class="lv-cell basic row-span-2" role="cell" aria-rowspan="2" data-group="basic"><b class="code">I</b><span class="lbl">基本級專業操作證</span></div>
+        <div class="lv-cell adv" role="cell" data-group="adv"><b class="code">Ia</b><span class="lbl">高級專業操作證</span></div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell weight" role="rowheader"><b><span>15kg</span><span>~</span><span>&lt;25kg</span></b></div>
+        <div class="lv-cell basic" role="cell" data-group="basic"><b class="code">I</b><span class="lbl">同基本級專業操作證</span></div>
+        <div class="lv-cell adv" role="cell" data-group="adv"><b class="code">Ib</b><span class="lbl">高級專業操作證</span></div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell weight" role="rowheader"><b><span>25kg</span><span>~</span><span>&lt;150kg</span></b></div>
+        <div class="lv-cell basic" role="cell" data-group="basic"><b class="code">II</b><span class="lbl">同基本級專業操作證</span></div>
+        <div class="lv-cell basic" role="cell" data-group="basic"><b class="code">II</b><span class="lbl">基本級專業操作證</span></div>
+        <div class="lv-cell adv" role="cell" data-group="adv"><b class="code">IIc</b><span class="lbl">高級專業操作證</span></div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell weight" role="rowheader"><b><span>150kg</span><span>~</span><span>&nbsp;</span></b></div>
+        <div class="lv-cell basic" role="cell" data-group="basic"><b class="code">III</b><span class="lbl">同基本級專業操作證</span></div>
+        <div class="lv-cell basic" role="cell" data-group="basic"><b class="code">III</b><span class="lbl">基本級專業操作證</span></div>
+        <div class="lv-cell adv" role="cell" data-group="adv"><b class="code">IIId</b><span class="lbl">高級專業操作證</span></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="levels-frame">
+    <div class="lv groups" role="table" aria-label="高級專業操作證操作限制排除分組">
+      <div class="lv-row" role="row">
+        <div class="lv-cell lv-head corner" role="columnheader"><b>操作限制排除</b><span>高級專業操作證</span></div>
+        <div class="lv-cell lv-head g-head center" role="columnheader" data-group="adv" tabindex="0"><b>G1</b><small>高級第一組</small></div>
+        <div class="lv-cell lv-head g-head center" role="columnheader" data-group="adv" tabindex="0"><b>G2</b><small>高級第二組</small></div>
+        <div class="lv-cell lv-head g-head center" role="columnheader" data-group="adv" tabindex="0"><b>G3</b><small>高級第三組</small></div>
+      </div>
+      <div class="lv-row" role="row">
+        <div class="lv-cell rowlabel data-top" role="rowheader">可排除之操作限制</div>
+        <div class="lv-cell items data-top" role="cell"><span>逾距地面或水面 400 呎區域</span><span>視距外操作</span><span>夜間飛行</span></div>
+        <div class="lv-cell items data-top" role="cell"><span>投擲或噴灑物件</span></div>
+        <div class="lv-cell items data-top" role="cell"><span>人群聚集或室外集會遊行上空活動</span></div>
+      </div>
+    </div>
+    </div>
+
+    <p class="tip">《遙控無人機操作證測驗與給證須知》113.12.01 版 壹、一、(三)(四)：操作 15 公斤以上不具導航裝置之航空模型機者，應具有基本級專業操作證。</p>
+    </section>
+
+    <footer class="slide-foot">
+      <a class="nav-btn nav-prev" href="ch1p12_1.3_Who_Needs_Which_Cert.html" data-nav="prev" aria-label="上一頁" title="上一頁">
+        <span class="nav-text">上一頁</span>
+        <svg class="nav-icon icon-rc" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+          <!-- 天線 -->
+          <path d="M14 16 L8 3" /><path d="M50 16 L56 3" />
+          <circle cx="8" cy="3" r="1.6" class="fill" /><circle cx="56" cy="3" r="1.6" class="fill" />
+          <!-- 機身 -->
+          <rect x="6" y="14" width="52" height="26" rx="7" />
+          <!-- 螢幕 -->
+          <rect x="26" y="19" width="12" height="7" rx="1.5" class="screen" />
+          <!-- 左右搖桿 -->
+          <circle cx="17" cy="28" r="6" /><circle cx="17" cy="28" r="1.8" class="fill stick stick-l" />
+          <circle cx="47" cy="28" r="6" /><circle cx="47" cy="28" r="1.8" class="fill stick stick-r" />
+          <!-- 天線訊號（僅左側；以左天線尖端 8,3 為圓心的兩道波紋，內圈先亮） -->
+          <g class="signal"><path class="wave wave-1" d="M3.17 4.29 A5 5 0 0 1 7.56 -1.98" /><path class="wave wave-2" d="M-0.21 5.2 A8.5 8.5 0 0 1 7.26 -5.47" /></g>
+          <!-- 開關 -->
+          <path d="M28 33 h8" /><path d="M30 36 h4" />
+        </svg>
+      </a>
+      <p>台中市政府輔導　台中無人機創造發展基地－無人機教材 專業基本級操作證</p>
+      <a class="nav-btn nav-next" href="ch1p14_1.3_Teaching_Privileges.html" data-nav="next" aria-label="下一頁" title="下一頁">
+        <span class="nav-text">下一頁</span>
+        <svg class="nav-icon icon-fpv" viewBox="-12 5 112 52" aria-hidden="true" focusable="false">
+          <!-- viewBox 從 x=-12、y=5 起算：左側加寬 12 單位放尾流線；圖形整體上移 5 單位，貼近「下一頁」文字（與遙控器對齊） -->
+          <!-- 尾流線（與飛行方向平行，微微向右上） -->
+          <g class="trail"><path d="M-4 25 l16 -0.8" /><path d="M-11 31 l24 -1.3" /><path d="M-5 37 l18 -0.9" /></g>
+          <g class="quad">
+            <!-- 靜態抬頭角；CSS 動畫套在外層 .quad，不會覆蓋這個 transform -->
+            <g transform="rotate(-8 56 30)">
+              <!-- 後方（遠側）機臂、馬達、螺旋槳：較細較小 -->
+              <path class="arm arm-far" d="M46.2 24.6 L29.3 13.1" /><path class="arm arm-far" d="M61.8 25.8 L68.7 15.5" />
+              <path class="motor" d="M29.3 13.1 v-3" /><path class="motor" d="M68.7 15.5 v-3" />
+              <ellipse class="prop prop-far" cx="29.3" cy="10.1" rx="10.2" ry="4.8" /><ellipse class="prop prop-far" cx="68.7" cy="12.5" rx="10.8" ry="5" />
+              <!-- 機身：側板（厚度）＋上蓋 -->
+              <path class="side" d="M45.9 29.2 L50.3 34.2 L65.8 35.4 L67.7 31 v2.6 L65.8 38 L50.3 36.8 L45.9 31.8 Z" />
+              <path class="plate" d="M67.7 31 L65.8 35.4 L50.3 34.2 L45.9 29.2 L46.2 24.6 L61.8 25.8 Z" />
+              <!-- 天線（機尾，向後上方） -->
+              <path d="M48.4 27.2 L44 13.5" /><circle cx="44" cy="13.5" r="1.2" class="fill" />
+              <!-- 前方（近側）機臂、馬達 -->
+              <path class="arm arm-near" d="M50.3 34.2 L43.3 44.5" /><path class="arm arm-near" d="M65.8 35.4 L81.3 46.9" />
+              <path class="motor" d="M43.3 44.5 v-3" /><path class="motor" d="M81.3 46.9 v-3" />
+              <!-- 前方（近側）螺旋槳：較大 -->
+              <ellipse class="prop" cx="43.3" cy="41.5" rx="11.4" ry="5.4" /><ellipse class="prop" cx="81.3" cy="43.9" rx="12" ry="5.8" />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+  (function(){
+    // 同色連動：滑鼠、鍵盤聚焦、觸控碰到有 data-group 的格子時，兩張表內同組格子一起亮起（本頁不用 .matrix，app.js 的連動不作用）
+    var tables=document.querySelectorAll('.lv'),cells=document.querySelectorAll('.lv-cell[data-group]'),current=null,lastTouch=0;
+    function set(g){if(g===current)return;current=g;tables.forEach(function(t){t.classList.toggle('has-active',!!g)});cells.forEach(function(c){c.classList.toggle('is-active',!!g&&c.dataset.group===g)})}
+    function from(t){var el=t&&t.closest?t.closest('[data-group]'):null;return el?el.dataset.group:null}
+    tables.forEach(function(t){
+      t.addEventListener('mouseover',function(e){if(Date.now()-lastTouch<800)return;set(from(e.target))});
+      t.addEventListener('mouseleave',function(){set(null)});
+      t.addEventListener('focusin',function(e){set(from(e.target))});
+      t.addEventListener('focusout',function(e){if(!t.contains(e.relatedTarget))set(null)});
+      t.addEventListener('touchstart',function(e){lastTouch=Date.now();var g=from(e.target);set(g===current?null:g)},{passive:true});
+    });
+  })();
+  </script>
+  <script>
+  (function(){
+    // 上一頁／下一頁：href 由 build.py 依頁序填入；href 為 # 時不動作。鍵盤 ← → 與 PageUp／PageDown 同步觸發，輸入框、對話框內不觸發。
+    var prev=document.querySelector('[data-nav="prev"]'),next=document.querySelector('[data-nav="next"]');
+    function go(a){var h=a&&a.getAttribute('href');if(h&&h!=='#')location.href=h}
+    [prev,next].forEach(function(a){a.addEventListener('click',function(e){if(a.getAttribute('href')==='#')e.preventDefault()})});
+    document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;if(e.target&&e.target.closest&&e.target.closest('input,textarea,select,video,audio,[contenteditable]'))return;if(document.querySelector('dialog[open]'))return;if(e.key==='ArrowRight'||e.key==='PageDown')go(next);if(e.key==='ArrowLeft'||e.key==='PageUp')go(prev)});
+  })();
+  </script>
+</body>
+</html>

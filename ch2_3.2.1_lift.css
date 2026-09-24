@@ -1,0 +1,99 @@
+/* Reuses the 0.0.0.4 template palette, typography, 1280×720 composition and footer. */
+.lift-page{--flow-low:#72caff;--flow-high:#ffc078;--lift-color:#9beaac;--readable-muted:#b6aca0;--control-border:#65594c;line-height:1.5}
+.lift-stage{position:relative;z-index:2;width:min(1280px,100%);min-height:720px;margin:0 auto;padding:20px clamp(24px,8.75vw,112px) 0}
+.slide-top{height:38px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line-soft)}
+.eyebrow{color:var(--readable-muted);font-size:13px;font-weight:700;letter-spacing:.15em}
+.eyebrow::before{content:"";display:inline-block;width:30px;height:1px;margin:0 10px 4px 0;background:var(--orange)}
+.eyebrow b{color:var(--orange)}
+.top-actions{display:flex;align-items:center;gap:18px}.chapter{font-size:12px;color:var(--readable-muted);letter-spacing:.13em}.chapter span{margin:0 8px;color:var(--orange)}
+button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{cursor:default;opacity:.35}
+button, a{ -webkit-tap-highlight-color:transparent }
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.icon-button{width:44px;height:44px;display:inline-grid;place-items:center;flex:none;color:var(--readable-muted);border:0;background:transparent;border-radius:4px}
+.icon-button:hover{color:var(--cream);background:var(--ink-4)}
+svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.icon-button svg{width:19px;height:19px}
+.slide-head{height:144px;display:flex;flex-direction:column;justify-content:center}
+.title-line{display:flex;align-items:baseline;gap:14px;margin:0 0 10px;line-height:1.15;white-space:nowrap}
+.title-main{font-size:64px;font-weight:700;letter-spacing:-.02em}.title-sub,.title-sep{font-size:48px;font-weight:700;letter-spacing:-.02em}.title-sep{color:var(--orange)}
+.title-lead{margin:0;color:var(--readable-muted);font-size:16px;line-height:1.6}
+.lesson-content{outline:none;min-width:0}.lesson-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid var(--line-soft);background:var(--line-soft)}
+.step{min-height:44px;display:flex;gap:12px;align-items:center;justify-content:center;padding:6px 12px;color:var(--readable-muted);background:#14110f;border:0;box-shadow:inset 0 -2px transparent;font-size:14px;font-weight:700;transition:background .18s,color .18s,box-shadow .18s}
+.step-number{font:14px var(--font-num);color:#b6a18e}.step:hover{background:#282018;color:var(--cream)}.step.active{color:var(--cream);background:#302017;box-shadow:inset 0 -2px var(--orange)}.step.active .step-number{color:var(--orange)}
+.lab-layout{display:grid;grid-template-columns:minmax(0,1fr) 282px;gap:14px;margin-top:12px;align-items:stretch}
+.flow-panel{min-width:0;margin:0;background:#09151d;border:1px solid #34404a;display:flex;flex-direction:column;overflow:hidden}
+.panel-heading{height:34px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#101719;color:#dadbd4;font-size:12px;letter-spacing:.08em}
+.heading-divider{margin:0 8px;color:#8fa4ad}.heading-en{color:#9aafb7;font:11px var(--font-num);letter-spacing:.12em}
+.live-status{display:inline-flex;gap:6px;align-items:center;color:#b1d8bb;font-size:11px;white-space:nowrap;letter-spacing:.03em}.live-status i{width:5px;height:5px;background:#8adea0;border-radius:50%}.live-status.paused{color:#d4c3a8}.live-status.paused i{background:#d4c3a8}
+.flow-viewport{position:relative;flex:1;min-height:0;display:flex;align-items:center;background:#092232}
+#airflow{display:block;width:100%;height:auto;aspect-ratio:1000/335}
+.flow-legend{min-height:30px;display:flex;gap:8px;align-items:center;padding:4px 14px;color:#d6ddd9;background:#101719;font-size:11px;white-space:nowrap}
+.legend-low{color:var(--flow-low)}.legend-high{color:var(--flow-high)}.legend-gradient{width:84px;height:5px;border-radius:8px;background:linear-gradient(90deg,#2746ef,#138bc4,#168c85,#e2b463,#ffa964)}.legend-note{margin-left:auto;color:#a1b4bc}
+.control-panel{background:linear-gradient(135deg,#1b1714,#131110);border:1px solid #4a3a2c;padding:13px 16px;min-width:0}
+.control-heading{display:flex;align-items:baseline;justify-content:space-between;gap:6px}.control-heading h2{font-size:13px;margin:0;color:var(--cream);font-weight:700}.control-heading>span{font:9px var(--font-num);letter-spacing:.09em;color:var(--readable-muted)}
+.angle-readout{display:flex;align-items:center;justify-content:space-between;height:57px}.angle-readout label{font-size:14px;color:var(--readable-muted)}.angle-readout label span{margin-left:4px}.angle-readout output{font:48px/1 var(--font-num);color:var(--orange);font-variant-numeric:tabular-nums}.angle-readout output span{font-size:30px}
+input[type=range]{appearance:none;display:block;width:100%;height:24px;margin:0;background:transparent;cursor:pointer;--range-fill:50%}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:3px;background:linear-gradient(to right,var(--orange) var(--range-fill),#706053 var(--range-fill))}
+input[type=range]::-moz-range-track{height:4px;border-radius:3px;background:#706053}input[type=range]::-moz-range-progress{background:var(--orange);height:4px}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:17px;height:17px;margin-top:-6.5px;border:3px solid #f8e4d4;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px #ff6b2c1a}
+input[type=range]::-moz-range-thumb{width:12px;height:12px;border:3px solid #f8e4d4;border-radius:50%;background:var(--orange)}
+.range-scale{display:flex;justify-content:space-between;color:var(--readable-muted);font:11px var(--font-num);margin-top:-1px;margin-bottom:8px}
+.angle-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.angle-presets button{min-height:44px;padding:4px;border:1px solid var(--control-border);color:var(--cream);background:#201a16;font:17px var(--font-num);border-radius:3px;transition:background .18s,border-color .18s}.angle-presets span{font:11px var(--font-zh);color:var(--readable-muted);margin-left:2px}.angle-presets button:hover{background:#34261d;border-color:#d1946b}.angle-presets button.selected{background:#422819;border-color:var(--orange);color:#ffb88e}.angle-presets button.selected span{color:#edc5ac}
+#angle-help{margin:8px 0 9px;font-size:11px;color:var(--readable-muted);white-space:nowrap}
+.lift-reading{display:flex;align-items:center;gap:10px;color:var(--readable-muted);font-size:12px;border-top:1px solid var(--line-soft);padding-top:9px}.lift-reading strong{font-size:12px;font-weight:400;color:var(--lift-color);min-width:2em}.lift-meter{flex:1;height:5px;background:#353d30;overflow:hidden;border-radius:4px}.lift-meter i{display:block;background:var(--lift-color);width:56%;height:100%;transform-origin:left center}
+.playback-controls{display:grid;grid-template-columns:1fr 1.2fr;gap:8px;margin-top:12px}.playback-controls button{min-height:44px;padding:7px 8px;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:3px;font-size:13px;font-weight:700;white-space:nowrap}.playback-controls svg{width:16px;height:16px;stroke-width:2}.primary-button{border:1px solid var(--orange);color:#1c100a;background:var(--orange)}.primary-button:hover{background:#ff8e5a}.secondary-button{border:1px solid var(--control-border);color:var(--cream);background:transparent}.secondary-button:hover{background:#32251c;border-color:#c69774}
+.teaching-caption{display:flex;justify-content:center;gap:12px;min-height:60px;align-items:center;padding:8px 95px 0;text-align:left}.caption-index{flex:none;font:28px var(--font-num);color:var(--orange);border-right:1px solid #5c3c24;padding-right:12px}.teaching-caption p{margin:0}#caption-title{color:var(--cream);font-size:17px;font-weight:700;line-height:1.4}#caption-detail{color:var(--readable-muted);font-size:12px;line-height:1.5;margin-top:3px}
+.lesson-foot{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;min-height:72px;padding-bottom:6px;margin-top:-2px}.footer-copy{align-self:flex-end;text-align:center;flex:1;padding-bottom:0}.footer-copy p{margin:0;font-size:11px;color:var(--readable-muted);line-height:1.6}.notes-button{border:0;background:transparent;color:#b1a191;font-size:11px;padding:3px 10px;min-height:28px;text-decoration:underline;text-underline-offset:3px}.notes-button:hover{color:var(--orange)}
+.nav-btn{position:relative;display:flex;flex-direction:column;gap:5px;align-items:center;flex:none;padding:0;border:0;color:var(--orange);background:none}.nav-text{font:700 .95rem var(--font-zh);letter-spacing:.06em;color:var(--cream);white-space:nowrap;line-height:1}.nav-icon{display:block;height:52px;width:auto;stroke-width:2;overflow:visible}.nav-icon .fill{fill:currentColor;stroke:none}.nav-btn:hover:not(:disabled){filter:drop-shadow(0 0 5px #ff6b2c75)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;top:8px;left:8px;z-index:20;transform:translateY(-180%);background:var(--orange);color:var(--ink);padding:10px 18px}.skip-link:focus{transform:none}
+dialog{color:var(--cream);background:#191613;border:1px solid #715034;border-radius:8px;padding:24px;max-width:min(620px,calc(100% - 32px));max-height:85dvh;line-height:1.8}dialog::backdrop{background:#000b;backdrop-filter:blur(4px)}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}.dialog-heading h2{font-size:23px;margin:0}dialog p{color:#c5baad;font-size:15px}dialog a{color:#ffb786;text-underline-offset:4px}.source-links a{display:block;margin-top:6px}.noscript-message{position:relative;z-index:3;margin:20px;padding:20px;background:#40281b}
+.lift-page:fullscreen{overflow:auto;background:var(--ink)}
+@media(min-width:1100px) and (min-height:780px){.lift-stage{margin-top:calc((100dvh - 720px)/2)}}
+@media(max-width:1099px){.lift-stage{padding-inline:32px;min-height:100dvh}.title-main{font-size:52px}.title-sub,.title-sep{font-size:39px}.slide-head{height:150px}.lab-layout{grid-template-columns:minmax(0,1fr) 270px}.control-panel{padding:12px}.teaching-caption{padding-inline:70px}.footer-copy p{font-size:10px}}
+@media(max-width:850px){.lift-stage{padding:16px 24px 0}.slide-head{height:140px}.title-main{font-size:45px}.title-sub,.title-sep{font-size:34px}.lab-layout{grid-template-columns:1fr}.control-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 28px;padding:16px 20px}.control-heading{grid-column:1;grid-row:1}.angle-readout{grid-column:1;grid-row:2}.control-panel input{grid-column:1;grid-row:3}.range-scale{grid-column:1;grid-row:4}.angle-presets{grid-column:2;grid-row:2}#angle-help{grid-column:1;grid-row:5}.lift-reading{grid-column:2;grid-row:1;border:0;padding:0}.playback-controls{grid-column:2;grid-row:3 / 6;align-self:center;margin:0}.teaching-caption{padding:18px 70px;min-height:92px}.lesson-foot{margin-bottom:4px}.step{font-size:13px;gap:8px}}
+@media(max-width:560px){.lift-stage{padding:12px 16px 0}.slide-top{height:40px}.eyebrow{font-size:11px;letter-spacing:.06em}.eyebrow::before{width:17px;margin-right:7px}.chapter{display:none}.top-actions{gap:0}.slide-head{height:auto;padding:32px 0 24px}.title-line{white-space:normal;flex-wrap:wrap;gap:0 8px;margin-bottom:12px}.title-main{font-size:39px}.title-sub{font-size:27px}.title-sep{font-size:26px}.title-lead{font-size:14px}.lesson-steps{grid-template-columns:repeat(2,1fr)}.step{min-height:46px;justify-content:flex-start;padding-left:15px;font-size:14px}.lab-layout{gap:12px;margin-top:12px}.panel-heading{padding-inline:10px;font-size:11px}.heading-en{font-size:10px}.flow-viewport{min-height:218px}#airflow{aspect-ratio:720/460}.flow-legend{flex-wrap:wrap;gap:6px;padding:6px 10px;font-size:10px}.legend-gradient{width:58px}.legend-note{font-size:10px}.control-panel{gap:0 15px;padding:16px 14px}.control-heading{display:block}.control-heading h2{font-size:15px}.control-heading>span{display:none}.angle-readout{height:58px}.angle-readout output{font-size:46px}.angle-presets{gap:4px;align-items:center}.angle-presets button{font-size:15px;min-height:44px}.angle-presets span{display:none}#angle-help{font-size:10px;white-space:normal;max-width:17em;margin-bottom:0}.lift-reading{gap:6px;font-size:11px}.lift-reading strong{font-size:11px}.lift-meter{min-width:20px}.playback-controls{gap:6px;grid-template-columns:1fr;margin:8px 0 0}.playback-controls button{min-height:40px;font-size:12px;padding:4px}.teaching-caption{padding:20px 0;min-height:112px;gap:10px;justify-content:flex-start}#caption-title{font-size:16px}#caption-detail{font-size:12px}.caption-index{font-size:24px;padding-right:10px}.lesson-foot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}.nav-prev{justify-self:start}.nav-next{justify-self:end;grid-column:2;grid-row:1}.footer-copy{grid-row:2;grid-column:1 / -1;border-top:1px solid var(--line-soft);padding-top:14px}.footer-copy p{font-size:10px;max-width:28em;margin:auto}.notes-button{min-height:44px}.nav-text{font-size:13px}dialog{padding:18px}.dialog-heading h2{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.lift-page *{scroll-behavior:auto;transition:none!important}}
+@media(max-width:560px){.playback-controls button{min-height:44px}input[type=range]{height:44px}#angle-help{font-size:12px}.flow-legend{font-size:11px}.legend-note{font-size:11px}}
+
+
+/* ===== 頁尾翻頁按鈕：與範本一致的圖示與動畫（複製自 slide.css），尺寸沿用本頁縮小版 ===== */
+.lesson-foot .nav-btn{text-decoration:none;color:var(--orange);position:relative;z-index:1;cursor:pointer}
+.lesson-foot .nav-icon{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+/* 穿越機（3/4 視角）：常態緩慢飄浮、螺旋槳慢速閃動；滑鼠移入加速向右衝、螺旋槳高速閃動、尾流拉長 */
+.icon-fpv .plate{fill:rgba(255,107,44,.16)}
+.icon-fpv .side{fill:rgba(255,107,44,.34)}
+.icon-fpv .arm-far{stroke-width:2.2}
+.icon-fpv .arm-near{stroke-width:3.2}
+.icon-fpv .motor{stroke-width:3.4}
+.icon-fpv .prop{fill:currentColor;fill-opacity:.28;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:prop-spin 1.1s ease-in-out infinite}
+.icon-fpv .prop-far{stroke-width:1.3}
+.icon-fpv .trail{opacity:.45;transition:opacity .2s,transform .25s}
+.icon-fpv .quad{transform-box:fill-box;transform-origin:center;animation:fpv-hover 2.6s ease-in-out infinite}
+.nav-next:hover .icon-fpv .quad,.nav-next:focus-visible .icon-fpv .quad{animation:fpv-fly .7s ease-in-out infinite}
+.nav-next:hover .icon-fpv .prop,.nav-next:focus-visible .icon-fpv .prop{animation-duration:.22s}
+.nav-next:hover .trail,.nav-next:focus-visible .trail{opacity:1;transform:translateX(-6px)}
+@keyframes fpv-hover{0%,100%{transform:translate(0,0)}50%{transform:translate(1px,-2px)}}
+@keyframes fpv-fly{0%,100%{transform:translate(6px,0) rotate(0deg)}50%{transform:translate(10px,-2px) rotate(-3deg)}}
+@keyframes prop-spin{0%,100%{transform:scaleX(1);fill-opacity:.28}50%{transform:scaleX(.8);fill-opacity:.55}}
+/* 遙控器：滑鼠移入時兩顆搖桿一起往左推到外圈邊緣再彈回、左天線向外擴散波紋、螢幕開機亮起 */
+.icon-rc .stick{transform-box:fill-box;transform-origin:center}
+.icon-rc .screen{fill:rgba(255,107,44,0);transition:fill .25s}
+.icon-rc .wave{opacity:0;stroke-width:1.7;transform-box:view-box;transform-origin:8px 3px}
+.nav-prev:hover .icon-rc .stick,.nav-prev:focus-visible .icon-rc .stick{animation:stick-push 1s ease-in-out infinite}
+.nav-prev:hover .icon-rc .wave,.nav-prev:focus-visible .icon-rc .wave{animation:wave 1.2s ease-out infinite}
+.nav-prev:hover .icon-rc .wave-2,.nav-prev:focus-visible .icon-rc .wave-2{animation-delay:.28s}
+.nav-prev:hover .icon-rc .screen,.nav-prev:focus-visible .icon-rc .screen{animation:screen-on .5s ease-out forwards}
+@keyframes stick-push{0%{transform:translate(0,0)}30%{transform:translate(-3.6px,0)}60%{transform:translate(-3.6px,0)}80%{transform:translate(.6px,0)}100%{transform:translate(0,0)}}
+@keyframes wave{0%{opacity:0;transform:scale(.7)}25%{opacity:.95}100%{opacity:0;transform:scale(1.4)}}
+@keyframes screen-on{0%{fill:rgba(255,107,44,0)}35%{fill:rgba(255,107,44,.6)}50%{fill:rgba(255,107,44,.15)}100%{fill:rgba(255,107,44,.42)}}
+.nav-btn:hover,.nav-btn:focus-visible{filter:drop-shadow(0 0 8px rgba(255,107,44,.75));outline:none}
+@media (prefers-reduced-motion:reduce){.icon-fpv .quad,.icon-fpv .prop,.icon-rc .stick,.icon-rc .wave,.icon-rc .screen{animation:none!important}.nav-prev:hover .icon-rc .wave{opacity:.6}.nav-prev:hover .icon-rc .screen{fill:rgba(255,107,44,.42)}}
+/* href 為 # 時仍保留半透明，但游標一律為手掌 */
+.nav-btn[href="#"]{opacity:.55;cursor:pointer}
+/* 步驟切換：說明列右側的一對小按鈕 */
+.teaching-caption{position:relative}
+.step-nav{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;gap:6px;flex:none}
+.step-nav button{min-height:30px;padding:0 9px;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--control-border);border-radius:4px;background:transparent;color:var(--cream);font-size:12px;font-weight:700;cursor:pointer}
+.step-nav button:hover:not(:disabled){border-color:var(--orange);color:var(--orange)}
+.step-nav button:disabled{opacity:.4;cursor:default}
+.step-nav svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:560px){.step-nav{position:static;transform:none;margin-left:auto}}
