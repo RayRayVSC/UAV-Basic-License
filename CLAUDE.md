@@ -61,7 +61,7 @@ type: matrix | levels | custom
 css: 額外要載入的 CSS，逗號分隔（可省略）
 file: custom 頁的 HTML 檔名（僅 custom）
 foot_link: 頁尾按鈕「標籤 | 連結」（可省略）
-prev: / next: 覆寫前後頁連結（可省略；例如最後一頁 next 接到 ../data/Examination-Simulator/Examination.html）
+prev: / next: 覆寫前後頁連結（可省略；例如最後一頁 next 接到 https://rayrayvsc.github.io/Examination/Examination.html）
 ---
 內容框的 HTML 片段
 ```
@@ -73,7 +73,7 @@ prev: / next: 覆寫前後頁連結（可省略；例如最後一頁 next 接到
 - 文加圖版型：左文右圖（`.fig-row`），圖片**高度優先**：最高 390 px、寬度依比例、最寬 560 px（`.narrow` 340 px），右欄寬＝圖寬，文字吃剩下的寬度；單圖頁（`.full`）最高 390 px；並排圖列（`.fig-strip`）最高 300 px。正文字級維持 18 pt，版面空白用放大圖片來填，不放大文字；已確認。
 - 案例頁一個案例一頁（`.fig-row`，左標題與要點、右大圖），不併頁。
 - 圖高微調：`figure.fig` 的 `--fh`（預設 390 px），頁面可寫 `style="--fh:260px"`；橫幅特寬的圖用 `.fig-row.big`（最寬 700 px）；步驟文字多的科目頁用 `.fig-row.mid`（圖最寬 480 px）搭配 `.txt.compact`。
-- 外部連結按鈕：放在頁尾「下一頁」左邊（`.foot-link`，y 680–710、右緣 x 1038），內容檔檔頭寫 `foot_link: ▶ 標籤 | ../data/…`，產生器填進範本插槽 `{{foot_link}}`，開新分頁；標籤要短（約 8 個字），避免碰到置中的署名。相對路徑從 `0.0.2.0/` 起算。正文內若要放連結按鈕，用 `<p class="links"><a class="btn-link" …>`。
+- 外部連結按鈕：放在頁尾「下一頁」左邊（`.foot-link`，y 680–710、右緣 x 1038），內容檔檔頭寫 `foot_link: ▶ 標籤 | 網址`（術科動畫模擬器已上線：https://rayrayvsc.github.io/Examination/Examination.html，用這個網址，不用 ../data/ 相對路徑），產生器填進範本插槽 `{{foot_link}}`，開新分頁；標籤要短（約 8 個字），避免碰到置中的署名。網頁版本庫只含 `0.0.2.0/`，連到 `data/` 的相對路徑上線後會失效。正文內若要放連結按鈕，用 `<p class="links"><a class="btn-link" …>`。
 - 影片：不用 YouTube 內嵌，影片檔放 `video/`（`ch{章}_` 前綴），用 ffmpeg 轉成 1280×720 H.264 + AAC（`-crf 25 -movflags +faststart`），另抽一張 poster 圖放 `img/`；頁面用 `<video controls preload="metadata" poster=… width=… height=…>`，寫在 `figure.fig` 內，尺寸規則同圖片。原始大檔留在 `data/`。
 - quiz 頁不寫正文，檔頭 `questions:` 列整個題池的題號（該小節範圍內的全部題目，由作者確認），`show: 5` 為一次顯示題數；可選 `explain_Q102: 一句解說`、`bank:`、`bank_var:`。build 時把題池嵌進頁面，量測與截圖用題池前 5 題（固定模式），開頁時由 quiz.js 隨機抽。build 會量整個題池每張卡的高度，超過 150 px 的題號會在報告裡提醒，抽到放不下時頁面會自動重抽。
 

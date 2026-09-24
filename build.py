@@ -388,7 +388,7 @@ def main(argv):
         problems = []
         for k in ('prev', 'next'):
             target = pg[k]
-            if target != '#' and not os.path.exists(os.path.join(ROOT, target)):
+            if target != '#' and not target.startswith(('http://', 'https://')) and not os.path.exists(os.path.join(ROOT, target)):
                 problems.append('%s 連結目標不存在：%s' % (k, target))
         if pg['type'] not in ('blank', 'cover') and not sub_has_section(pg):
             problems.append('副標未以章節序號開頭（應為「%s …」）' % pg['sec'])
